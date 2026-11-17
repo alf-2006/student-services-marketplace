@@ -99,7 +99,7 @@ p {
   flex-direction: column;
 }
 
-.app-shell > main {
+.app-shell > #main-content {
   flex: 1;
 }
 

@@ -22,7 +22,7 @@ export default function HomePage() {
               <Button to={ROUTES.services}>تصفح كل الخدمات</Button>
               <Button to={ROUTES.categories} variant="secondary">استكشف التصنيفات</Button>
             </div>
-            <p className="home-sample-note">المحتوى الحالي تجريبي للتوضيح، وستظهر بيانات الخدمات الفعلية بعد إعداد المشروع.</p>
+            <p className="home-sample-note">الخدمات ومقدموها بيانات تجريبية للتوضيح. حسابك وطلباتك يستخدمان Firebase الحقيقي عند تفعيل الاتصال.</p>
           </div>
           <div className="home-hero-visual">
             <img src={imageAssets.hero} alt="مساحة عمل جامعية تمثل التعاون وتبادل المهارات" />
