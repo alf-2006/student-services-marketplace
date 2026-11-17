@@ -6,7 +6,7 @@
 
 ## التشغيل المحلي
 
-يلزم Node.js 22.20 أو أحدث وpnpm 11.25.0:
+يلزم Node.js 22.20 أو أحدث من فرع 22، وpnpm 11.25.0:
 
 ```bash
 npm install --global pnpm@11.25.0
