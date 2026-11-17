@@ -1,0 +1,127 @@
+.request-page,
+.requests-page {
+  max-width: 900px;
+}
+
+.request-summary {
+  margin: 1.5rem 0;
+  border-inline-start: 4px solid #d9b35b;
+}
+
+.request-summary h2,
+.request-card h2 {
+  margin-block: 0.25rem 0 0.75rem;
+}
+
+.request-summary__price {
+  margin-block-end: 0;
+  color: #185b47;
+}
+
+.request-form {
+  display: grid;
+  gap: 1.25rem;
+  margin-block-start: 1.5rem;
+}
+
+.request-form .form-grid {
+  align-items: start;
+}
+
+.request-form input,
+.request-form textarea {
+  width: 100%;
+}
+
+.request-consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.request-consent input {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-block-start: 0.1rem;
+  accent-color: #185b47;
+}
+
+.field--error label {
+  color: #8f2f2f;
+}
+
+.request-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block-start: 0.5rem;
+}
+
+.request-list {
+  display: grid;
+  gap: 1rem;
+  margin-block-start: 1.5rem;
+}
+
+.request-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.request-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.request-status--pending {
+  color: #6b4b08;
+  background: #fff3cc;
+}
+
+.request-status--cancelled {
+  color: #5d6661;
+  background: #e9ece8;
+}
+
+.request-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  margin: 0;
+}
+
+.request-card__details div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.request-card__details dt {
+  color: #586b61;
+  font-size: 0.9rem;
+}
+
+.request-card__details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .request-card__header {
+    flex-direction: column;
+  }
+
+  .request-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .request-actions .btn {
+    width: 100%;
+  }
+}
