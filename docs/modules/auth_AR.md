@@ -1,20 +1,45 @@
 # دليل وحدة الحسابات والملفات التعريفية
 
-تملك هذه الوحدة تهيئة Firebase modular، وتسجيل الدخول والتسجيل والخروج، وملف الطالب العام والحساب الحقيقي. يقرأ التطبيق متغيرات `VITE_FIREBASE_*` من بيئة Vite فقط. عند غياب أي متغير، يبقى `user` بقيمة `null` وتظهر رسالة إعداد صريحة؛ لا يوجد مستخدم Preview أو نجاح وهمي.
+> **المسؤول الحالي:** مصطفى أحمد — `ItzFafa`
+> **نطاق الشرح والصيانة:** تهيئة Firebase modular، جلسات Auth والحسابات، حفظ الملف الشخصي الخاص وقواعد ملكيته، وتشخيص فشل الإعداد.
+
+تقرأ الوحدة متغيرات `VITE_FIREBASE_*` من بيئة Vite فقط. عند غياب أي متغير، يبقى `user` بقيمة `null` وتظهر رسالة إعداد صريحة؛ لا يوجد مستخدم Preview أو نجاح وهمي. هذا التعيين مسؤولية حالية للشرح والصيانة ولا يغيّر سجل Git أو ينسب تنفيذًا تاريخيًا بأثر رجعي.
 
 ## الواجهات الأساسية
 
-- `src/firebase.js`: يصدّر `firebaseApp` و`firebaseAuth` و`firebaseDb` و`isFirebaseConfigured` و`firebaseMode` و`firebaseConfigurationError`.
-- `AuthProvider` من `src/context/AuthContext.jsx` و`useAuth` من `src/hooks/useAuth.js`. يعرض الـhook حالة `{user, loading, authError, login, register, logout, isConfigured}`.
-- `src/services/authService.js`: يوفّر `getSafeRedirect` الذي يقبل مسارًا داخليًا يبدأ بشرطة واحدة فقط، ويحوّل أخطاء Firebase المعروفة إلى رسائل عربية دون كشف تفاصيل داخلية.
-- `src/services/profileService.js`: يقرأ ويكتب `profiles/{uid}` مع التحقق من وجود المستخدم، ويكتب الحد الأدنى `{uid, displayName, email, department, createdAt}`. لا يأخذ `uid` من نموذج المستخدم.
+- `src/firebase.js`: يصدّر `firebaseApp` و`firebaseAuth` و`firebaseDb` و`isFirebaseConfigured` و`firebaseMode` و`firebaseConfigurationError` بعد فحص مفاتيح SDK الستة.
+- `AuthProvider` من `src/context/AuthContext.jsx` و`useAuth` من `src/hooks/useAuth.js`: يشاركان حالة `{user, loading, authError, login, register, logout, isConfigured}` مع الصفحات.
+- `src/services/authService.js`: يوفّر `getSafeRedirect` لمسار داخلي يبدأ بشرطة واحدة، ويحوّل أخطاء Firebase المعروفة إلى رسائل عربية دون كشف تفاصيل داخلية.
+- `src/services/profileService.js`: يقرأ ويكتب `profiles/{uid}` مع التحقق من وجود المستخدم، ويجعل الهوية والبريد من جلسة Auth لا من نموذج قابل للتغيير.
 
-## التشغيل والإعداد
+## دورة الحساب
 
-فعّل مزود Email/Password في Firebase Authentication، وأنشئ قاعدة Firestore وقواعدها المقيدة بمالك الوثيقة، ثم أضف القيم الست في `.env.local`. أعد تشغيل Vite بعد تغيير البيئة. لا تُحفظ كلمات المرور في URL أو `localStorage`، ولا تُرفع ملفات البيئة الحقيقية إلى Git.
+عند فتح التطبيق يستمع `AuthProvider` إلى `onAuthStateChanged`. التسجيل في `authService.js` ينشئ حساب Email/Password، ويحاول تحديث `displayName` ثم حفظ الملف. إذا أُنشئ الحساب وفشل حفظ الملف أو تحديث اسم العرض، تعرض الواجهة حالة جزئية صريحة بدل الادعاء بأن الحساب فشل أو اكتمل كله.
 
-الملف العام `student-ahmed` بيانات تجريبية مستقلة من كتالوج الخدمات. عند زيارة `/students/{uid}` بعد تسجيل الدخول، يظهر الحساب الحقيقي ويُتاح تعديله؛ لا يُستبدل بملف تجريبي. إذا نجح إنشاء حساب Firebase وفشل حفظ ملف Firestore، تعرض الصفحة رسالة جزئية واضحة بأن الحساب أُنشئ فعلًا ولا تدّعي فشل الإنشاء.
+يقبل `getSafeRedirect` مسارًا داخليًا فقط، ويرفض التحويل الخارجي والمسارات التي تبدأ بـ`//` أو تحتوي `\\`. لا تُحفظ كلمات المرور في URL أو `localStorage`.
+
+## الملف الخاص وقواعده
+
+الوثيقة هي `profiles/{uid}`:
+
+- الإنشاء: `uid`, `email`, `displayName`, `department`, `createdAt`.
+- التعديل: `displayName` و`department` فقط.
+- القراءة: مالك الملف فقط.
+- `uid` والبريد و`createdAt`: ثابتة في التعديل.
+- الحذف: ممنوع في `firestore.rules`.
+
+فحص الخدمة في `profileService.js` مفيد للرسالة المبكرة، لكن `firestore.rules` هو الحاجز الأمني النهائي. أحمد عيد يملك تدفق الطلبات، ومريم مصطفى تملك واجهة نموذج الطلب؛ لا تُخلط بيانات الطلب مع الملف الخاص.
+
+## الإعداد والحالة الفعلية
+
+المفاتيح المطلوبة موضحة في `.env.example` وتوضع محليًا في `.env.local` فقط. كل قيمة `VITE_` عامة داخل المتصفح ولا تصلح للأسرار. مزوّد Email/Password ونطاق المصادقة مفعّلان حسب الحالة المسجلة، وتهيئة SDK موجودة في `src/firebase.js`.
+
+لا توجد Cloud Firestore سحابية منشأة حاليًا، ولذلك لم تُنشر قواعدها ولم يُتحقق من إنشاء حساب سحابي أو حفظ وقراءة طلب سحابي. قواعد الملكية اختُبرت محليًا بالمحاكي في `tests/firestore.rules.test.js`. لا تنشئ بيانات سحابية ولا تزيل رسائل عدم الجاهزية. منطقة Firestore غير قابلة للتغيير بعد اختيارها وتحتاج موافقة صاحب المشروع قبل أي إنشاء.
 
 ## الاختبار
 
-اختبار الوحدة في `tests/auth.test.js` يختبر التوجيه الداخلي الآمن وتحويل أخطاء Firebase دون اتصال سحابي. لا تعتمد اختبارات هذه الوحدة على مستخدم أو مشروع Firebase حقيقي.
+- `tests/auth.test.js` يختبر التوجيه الداخلي الآمن وتحويل أخطاء Firebase دون اتصال سحابي.
+- `tests/profile.test.js` يختبر خدمة الملف وحدود التحقق.
+- `pnpm test:rules` يشغّل `tests/firestore.rules.test.js` على محاكي محلي بمعرّف `demo-student-marketplace` و`127.0.0.1:8080`.
+
+الحالة المسجلة للمشروع هي 42 اختبار وحدة و10 اختبارات قواعد عبر محاكي CI ناجحة. لا تُقدّم هذه النتيجة على أنها تحقق من Firebase السحابي أو دليل على تنفيذ يدوي لطالب.
