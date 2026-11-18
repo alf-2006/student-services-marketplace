@@ -67,6 +67,8 @@ export default function ServiceRequestPage() {
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) {
       setFormError('راجع الحقول المميزة بالأخطاء ثم أرسل النموذج مجددًا.');
+      const formElement = event.currentTarget;
+      requestAnimationFrame(() => formElement.querySelector('[aria-invalid="true"]')?.focus());
       return;
     }
     if (!user) {
@@ -202,7 +204,7 @@ export default function ServiceRequestPage() {
                 aria-invalid={Boolean(errors.consent)}
                 aria-describedby={errors.consent ? 'request-consent-error' : undefined}
               />
-              أوافق على مشاركة هذه البيانات مع مقدم الخدمة لمعالجة الطلب.
+              <span>أوافق على مشاركة هذه البيانات مع مقدم الخدمة لمعالجة الطلب.</span>
             </label>
             {errors.consent && <p className="field-error" id="request-consent-error" role="alert">{errors.consent}</p>}
           </div>

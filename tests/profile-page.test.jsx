@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -12,9 +12,9 @@ vi.mock('../src/services/profileService.js', () => ({
 }));
 import StudentProfilePage from '../src/pages/StudentProfilePage.jsx';
 
-function profilePage() {
+function profilePage(studentId = 'account') {
   return (
-    <MemoryRouter initialEntries={['/students/account']}>
+    <MemoryRouter initialEntries={['/students/' + studentId]}>
       <Routes><Route path="/students/:studentId" element={<StudentProfilePage />} /></Routes>
     </MemoryRouter>
   );
@@ -38,6 +38,20 @@ describe('الملف الشخصي المبسط', () => {
     fireEvent.click(screen.getByRole('button', { name: 'حفظ التعديلات' }));
     expect(screen.getByText('القسم يجب ألا يتجاوز 100 حرف.')).toBeInTheDocument();
     expect(state.saveProfile).not.toHaveBeenCalled();
+    await waitFor(() => expect(field).toHaveFocus());
+    expect(screen.getAllByRole('main')).toHaveLength(1);
+  });
+
+  it('يعرض خدمات الطالب ببطاقات ذات وصف وسعر وروابط تفاصيل بدل العناوين الضيقة', () => {
+    state.user = null;
+    render(profilePage('student-ahmed'));
+    expect(screen.getAllByRole('main')).toHaveLength(1);
+    const cards = document.querySelectorAll('.profile-service-card');
+    expect(cards).toHaveLength(2);
+    expect(cards[0].querySelector('h3')).not.toBeNull();
+    expect(cards[0].querySelector('p')).not.toBeNull();
+    expect(cards[0]).toHaveAttribute('href', '/services/tutoring-calculus');
+    expect(cards[0]).toHaveTextContent('180 جنيه');
   });
 
   it('لا يعرض استجابة ملف قديم بعد تسجيل الخروج', async () => {

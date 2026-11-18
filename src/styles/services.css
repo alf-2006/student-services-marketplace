@@ -43,12 +43,6 @@
   padding-inline: .35rem;
 }
 
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-}
-
 .category-card {
   display: flex;
   min-height: 100%;
@@ -192,8 +186,13 @@
   margin-top: 2rem;
 }
 
+@media (min-width: 641px) {
+  .service-filters > .btn {
+    justify-self: start;
+  }
+}
+
 @media (max-width: 800px) {
-  .category-grid,
   .service-details {
     grid-template-columns: 1fr;
   }

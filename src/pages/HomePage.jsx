@@ -53,7 +53,7 @@ export default function HomePage() {
 
       <section className="container page-section" aria-labelledby="featured-heading">
         <div className="section-heading"><div><p className="eyebrow">اختيارات البداية</p><h2 id="featured-heading">خدمات مميزة للتجربة</h2></div><Link className="text-link" to={ROUTES.services}>كل الخدمات</Link></div>
-        {featuredServices.length ? <div className="service-grid">{featuredServices.map((service) => <ServiceCard key={service.id} service={service} />)}</div> : <p className="notice">لا توجد خدمات مميزة مضافة بعد.</p>}
+        {featuredServices.length ? <div className="service-grid featured-service-grid">{featuredServices.map((service) => <ServiceCard key={service.id} service={service} />)}</div> : <p className="notice">لا توجد خدمات مميزة مضافة بعد.</p>}
       </section>
     </main>
   );

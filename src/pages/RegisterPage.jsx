@@ -39,7 +39,13 @@ export default function RegisterPage() {
     event.preventDefault();
     const nextErrors = validateRegistration(form);
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length > 0 || !isConfigured) return;
+    if (Object.keys(nextErrors).length > 0) {
+      // ننتظر عرض رسائل الخطأ ثم ننقل التركيز لأول حقل يحتاج تصحيحًا.
+      const formElement = event.currentTarget;
+      requestAnimationFrame(() => formElement.querySelector('[aria-invalid="true"]')?.focus());
+      return;
+    }
+    if (!isConfigured) return;
 
     setSubmitting(true);
     try {
@@ -53,7 +59,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <section className="container page-section auth-page">
+    <main className="container page-section auth-page">
       <div className="page-header">
         <p className="eyebrow">انضم إلى المجتمع</p>
         <h1>إنشاء حساب</h1>
@@ -124,7 +130,15 @@ export default function RegisterPage() {
         />
         <div className={`field ${errors.terms ? 'field--error' : ''}`}>
           <label className="checkbox-label" htmlFor="register-terms">
-            <input id="register-terms" name="terms" type="checkbox" checked={form.terms} onChange={updateField} />
+            <input
+              id="register-terms"
+              name="terms"
+              type="checkbox"
+              checked={form.terms}
+              onChange={updateField}
+              aria-invalid={errors.terms ? 'true' : undefined}
+              aria-describedby={errors.terms ? 'register-terms-error' : undefined}
+            />
             <span>أوافق على استخدام المنصة لإدارة طلباتي وبيانات ملفي التعريفي.</span>
           </label>
           {errors.terms && <p className="field-error" id="register-terms-error" role="alert">{errors.terms}</p>}
@@ -136,6 +150,6 @@ export default function RegisterPage() {
           لديك حساب؟ <Link className="text-link" to={`/login?redirect=${encodeURIComponent(redirectTo)}`}>سجّل الدخول</Link>
         </p>
       </form>
-    </section>
+    </main>
   );
 }

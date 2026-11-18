@@ -3,7 +3,6 @@ import SearchBar from '../components/ui/SearchBar';
 import ServiceCard from '../components/ui/ServiceCard';
 import { ROUTES } from '../constants/routes';
 import { serviceCategories } from '../constants/serviceCategories';
-import { formatPrice } from '../utils/formatters';
 import ServiceFilters from '../components/ui/ServiceFilters';
 import { filterServices } from '../services/servicesService';
 import '../styles/services.css';
@@ -55,7 +54,6 @@ export default function ServicesPage() {
               <div className="service-result-card" key={service.id}>
                 <ServiceCard service={service} />
                 <div className="service-result-card__footer">
-                  <span className="muted">{formatPrice(service.price)} · {service.unit}</span>
                   <Link className="text-link" to={`${ROUTES.serviceDetails(service.id)}${querySuffix}`}>
                     عرض التفاصيل
                   </Link>

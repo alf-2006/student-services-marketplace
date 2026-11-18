@@ -49,10 +49,11 @@ a:hover {
 
 :focus {
   outline: none;
+  scroll-margin-top: 100px;
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-ochre);
+  outline: 3px solid var(--color-forest);
   outline-offset: 3px;
 }
 
@@ -117,6 +118,11 @@ p {
   gap: var(--space-3);
   margin-bottom: var(--space-8);
   max-width: 760px;
+}
+
+.page-header h1,
+.page-header p {
+  margin-bottom: 0;
 }
 
 .eyebrow {
@@ -243,11 +249,14 @@ p {
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: var(--space-5);
 }
 
 .field {
   display: grid;
+  min-width: 0;
+  align-content: start;
   gap: 0.4rem;
 }
 
@@ -256,13 +265,14 @@ p {
   font-weight: 800;
 }
 
-.field > label span {
+.field .required-marker {
   color: var(--color-danger);
 }
 
-.field input,
-.field select,
-.field textarea {
+/* حقول النص أبناء مباشرين؛ checkbox داخل label لا يأخذ عرض حقل النص. */
+.field > input,
+.field > select,
+.field > textarea {
   width: 100%;
   min-height: 48px;
   border: 1px solid #aebfb5;
@@ -273,27 +283,33 @@ p {
   transition: border-color var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard), background-color var(--motion-fast) var(--ease-standard);
 }
 
+.field > input,
+.field > select {
+  height: 52px;
+  line-height: 1.4;
+}
+
 .field textarea {
   min-height: 130px;
   resize: vertical;
 }
 
-.field input:hover,
-.field select:hover,
-.field textarea:hover {
+.field > input:hover,
+.field > select:hover,
+.field > textarea:hover {
   border-color: var(--color-forest);
 }
 
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
+.field > input:focus,
+.field > select:focus,
+.field > textarea:focus {
   border-color: var(--color-forest);
   box-shadow: var(--focus-ring);
 }
 
-.field input[aria-invalid='true'],
-.field select[aria-invalid='true'],
-.field textarea[aria-invalid='true'] {
+.field > input[aria-invalid='true'],
+.field > select[aria-invalid='true'],
+.field > textarea[aria-invalid='true'] {
   border-color: var(--color-danger);
 }
 
@@ -573,6 +589,7 @@ p {
 .home-hero .btn-primary:hover { background: #eed28b; color: var(--color-ink); }
 .home-hero .btn-secondary { border-color: #b8d2c4; color: #fff; }
 .home-hero .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+.home-hero :focus-visible { outline-color: #fff; }
 .home-sample-note { max-width: 600px; margin-top: var(--space-6); color: #c7ddd1; font-size: 0.9rem; }
 .home-hero-visual { position: relative; }
 .home-hero-visual img { width: 100%; aspect-ratio: 4 / 5; border-radius: 44% 12px 12px 12px; object-fit: cover; box-shadow: 20px 20px 0 var(--color-ochre); }
@@ -596,10 +613,10 @@ p {
 .search-bar-category { display: grid; gap: 0.35rem; }
 .search-bar label { color: var(--color-ink); font-size: 0.9rem; font-weight: 800; }
 .search-bar input,
-.search-bar select { width: 100%; min-height: 48px; border: 1px solid #aebfb5; border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-ink); padding: 0.65rem 0.8rem; }
+.search-bar select { width: 100%; height: 52px; min-height: 52px; line-height: 1.4; border: 1px solid #aebfb5; border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-ink); padding: 0.65rem 0.8rem; }
 .search-bar input:focus,
-.search-bar select:focus { border-color: var(--color-forest); box-shadow: var(--focus-ring); outline: none; }
-.search-bar .btn { min-height: 48px; }
+.search-bar select:focus { border-color: var(--color-forest); box-shadow: var(--focus-ring); }
+.search-bar .btn { min-height: 52px; }
 
 .category-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
 .category-card { overflow: hidden; color: var(--color-ink); text-decoration: none; transition: transform var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard); }
@@ -636,6 +653,9 @@ p {
 .footer-links a:hover { color: var(--color-forest); }
 .footer-bottom { display: flex; justify-content: space-between; gap: var(--space-4); border-top: 1px solid var(--color-border); color: var(--color-muted); padding-block: var(--space-4); font-size: 0.88rem; }
 
+/* أربعة اختيارات: صفان متوازنان بدل بطاقة منفردة في الصف الثاني. */
+.featured-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
 @media (max-width: 900px) {
   .site-header-inner { position: relative; }
   .menu-toggle { display: inline-flex; min-height: 44px; align-items: center; border: 1px solid var(--color-forest); border-radius: var(--radius-sm); background: transparent; color: var(--color-forest); cursor: pointer; padding: 0.55rem 0.8rem; font-weight: 800; }
@@ -647,11 +667,14 @@ p {
   .nav-user-label { padding: 0.65rem 0.75rem; }
   .home-hero-grid { grid-template-columns: 1fr; min-height: auto; }
   .home-hero-visual { max-width: 520px; }
+  .hero-caption { right: 0.6rem; }
   .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .categories-page .category-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
   .search-bar { grid-template-columns: 1fr; }
+  .featured-service-grid { grid-template-columns: 1fr; }
   .category-grid { grid-template-columns: 1fr; }
   .home-hero-visual img { box-shadow: 10px 10px 0 var(--color-ochre); }
   .hero-caption { right: 0.6rem; bottom: 0.6rem; }

@@ -16,14 +16,19 @@ function navLinkClass({ isActive }) {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { user, loading } = useAuth();
+  const [loggingOut, setLoggingOut] = useState(false);
+  const [logoutError, setLogoutError] = useState('');
+  const { user, loading, logout } = useAuth();
   const profileTo = user ? ROUTES.studentProfile(user.uid) : ROUTES.studentProfile('student-ahmed');
   const profileLabel = user ? 'ملفي' : 'طالب مقدم خدمة (عينة)';
 
   useEffect(() => {
     if (!menuOpen) return;
     function closeOnEscape(event) {
-      if (event.key === 'Escape') setMenuOpen(false);
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        document.getElementById('menu-toggle')?.focus();
+      }
     }
     document.addEventListener('keydown', closeOnEscape);
     return () => document.removeEventListener('keydown', closeOnEscape);
@@ -37,6 +42,19 @@ export default function Navbar() {
     setMenuOpen(!menuOpen);
   }
 
+  async function handleLogout() {
+    setLoggingOut(true);
+    setLogoutError('');
+    try {
+      await logout();
+      closeMenu();
+    } catch {
+      setLogoutError('تعذر تسجيل الخروج. حاول مجددًا.');
+    } finally {
+      setLoggingOut(false);
+    }
+  }
+
   return (
     <header className="site-header">
       <div className="container site-header-inner">
@@ -48,6 +66,7 @@ export default function Navbar() {
           </span>
         </NavLink>
         <button
+          id="menu-toggle"
           className="menu-toggle"
           type="button"
           aria-expanded={menuOpen}
@@ -79,7 +98,15 @@ export default function Navbar() {
             )}
           </div>
           <div className="nav-actions">
-            {user && <span className="nav-user-label">مرحبًا، {user.displayName || 'طالب مسجل'}</span>}
+            {user && (
+              <>
+                <span className="nav-user-label">مرحبًا، {user.displayName || 'طالب مسجل'}</span>
+                <button className="btn btn-secondary" type="button" onClick={handleLogout} disabled={loggingOut}>
+                  {loggingOut ? 'جارٍ الخروج…' : 'تسجيل الخروج'}
+                </button>
+              </>
+            )}
+            {logoutError && <span className="field-error" role="alert">{logoutError}</span>}
             {!user && (
               <>
                 <NavLink className="nav-link nav-login" to={ROUTES.login} onClick={closeMenu}>

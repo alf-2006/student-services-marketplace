@@ -1,0 +1,3404 @@
+{
+  "date": "2026-11-18",
+  "provenance": "Anonymous real UI plus isolated local QA mocks; not live Firebase persistence",
+  "viewports": [
+    375,
+    768,
+    1280,
+    1920
+  ],
+  "records": [
+    {
+      "id": "categories",
+      "route": "/categories",
+      "checks": [
+        {
+          "title": "التصنيفات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "اختَر تصنيفًا يناسب المطلوب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "التصنيفات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "اختَر تصنيفًا يناسب المطلوب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "التصنيفات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "اختَر تصنيفًا يناسب المطلوب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "التصنيفات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "اختَر تصنيفًا يناسب المطلوب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "details",
+      "route": "/services/tutoring-calculus",
+      "checks": [
+        {
+          "title": "تفاصيل الخدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مراجعة التفاضل والتكامل"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "تفاصيل الخدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مراجعة التفاضل والتكامل"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "تفاصيل الخدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مراجعة التفاضل والتكامل"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "تفاصيل الخدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مراجعة التفاضل والتكامل"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "route": "/",
+      "checks": [
+        {
+          "title": "الرئيسية | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مهارة من طالب،حلّ لطالب."
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 27,
+              "y": 1315.140625,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 27,
+              "y": 1409.21875,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 27,
+              "y": 1473.21875,
+              "width": 321,
+              "height": 52
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 27,
+              "y": 1285.0625,
+              "width": 321,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 27,
+              "y": 1379.140625,
+              "width": 321,
+              "height": 24.484375
+            }
+          ],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "الرئيسية | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مهارة من طالب،حلّ لطالب."
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 330.03125,
+              "y": 1433.875,
+              "width": 404.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 115.53125,
+              "y": 1433.875,
+              "width": 202.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 33,
+              "y": 1433.875,
+              "width": 70.53125,
+              "height": 52
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 330.03125,
+              "y": 1403.796875,
+              "width": 404.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 115.53125,
+              "y": 1403.796875,
+              "width": 202.5,
+              "height": 24.484375
+            }
+          ],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "الرئيسية | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مهارة من طالب،حلّ لطالب."
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 512.03125,
+              "y": 1156.453125,
+              "width": 700.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 149.53125,
+              "y": 1156.453125,
+              "width": 350.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 67,
+              "y": 1156.453125,
+              "width": 70.53125,
+              "height": 52
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 512.03125,
+              "y": 1126.375,
+              "width": 700.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 149.53125,
+              "y": 1126.375,
+              "width": 350.5,
+              "height": 24.484375
+            }
+          ],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "الرئيسية | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "مهارة من طالب،حلّ لطالب."
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 832.03125,
+              "y": 1177.5625,
+              "width": 700.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 469.53125,
+              "y": 1177.5625,
+              "width": 350.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 387,
+              "y": 1177.5625,
+              "width": 70.53125,
+              "height": 52
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 832.03125,
+              "y": 1147.484375,
+              "width": 700.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 469.53125,
+              "y": 1147.484375,
+              "width": 350.5,
+              "height": 24.484375
+            }
+          ],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "login",
+      "route": "/login",
+      "checks": [
+        {
+          "title": "تسجيل الدخول | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "تسجيل الدخول"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "login-email",
+              "type": "email",
+              "text": "",
+              "x": 31,
+              "y": 321.25,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "login-password",
+              "type": "password",
+              "text": "",
+              "x": 31,
+              "y": 422.828125,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تسجيل الدخول",
+              "x": 31,
+              "y": 490.828125,
+              "width": 313,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 31,
+              "y": 287.671875,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 31,
+              "y": 389.25,
+              "width": 313,
+              "height": 27.1875
+            }
+          ],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "تسجيل الدخول | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "تسجيل الدخول"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "login-email",
+              "type": "email",
+              "text": "",
+              "x": 68.03125,
+              "y": 330.359375,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "login-password",
+              "type": "password",
+              "text": "",
+              "x": 68.03125,
+              "y": 431.9375,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تسجيل الدخول",
+              "x": 68.03125,
+              "y": 499.9375,
+              "width": 631.9375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 68.03125,
+              "y": 296.78125,
+              "width": 631.9375,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 68.03125,
+              "y": 398.359375,
+              "width": 631.9375,
+              "height": 27.1875
+            }
+          ],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "تسجيل الدخول | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "تسجيل الدخول"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "login-email",
+              "type": "email",
+              "text": "",
+              "x": 333,
+              "y": 394.046875,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "login-password",
+              "type": "password",
+              "text": "",
+              "x": 333,
+              "y": 495.625,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تسجيل الدخول",
+              "x": 333,
+              "y": 563.625,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 333,
+              "y": 360.46875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 333,
+              "y": 462.046875,
+              "width": 614,
+              "height": 27.1875
+            }
+          ],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "تسجيل الدخول | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "تسجيل الدخول"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "login-email",
+              "type": "email",
+              "text": "",
+              "x": 653,
+              "y": 405.25,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "login-password",
+              "type": "password",
+              "text": "",
+              "x": 653,
+              "y": 506.828125,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تسجيل الدخول",
+              "x": 653,
+              "y": 574.828125,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 653,
+              "y": 371.671875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 653,
+              "y": 473.25,
+              "width": 614,
+              "height": 27.1875
+            }
+          ],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "my-requests-account",
+      "route": "/my-requests",
+      "checks": [
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "",
+              "type": "button",
+              "text": "إلغاء الطلب",
+              "x": 31,
+              "y": 501.40625,
+              "width": 313,
+              "height": 44
+            }
+          ],
+          "labels": [],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "",
+              "type": "button",
+              "text": "إلغاء الطلب",
+              "x": 40.03125,
+              "y": 445.296875,
+              "width": 687.9375,
+              "height": 44
+            }
+          ],
+          "labels": [],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "",
+              "type": "button",
+              "text": "تسجيل الخروج",
+              "x": 50,
+              "y": 17,
+              "width": 140.984375,
+              "height": 44
+            },
+            {
+              "id": "",
+              "type": "button",
+              "text": "إلغاء الطلب",
+              "x": 223,
+              "y": 524.984375,
+              "width": 834,
+              "height": 44
+            }
+          ],
+          "labels": [],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "",
+              "type": "button",
+              "text": "تسجيل الخروج",
+              "x": 370,
+              "y": 17,
+              "width": 140.984375,
+              "height": 44
+            },
+            {
+              "id": "",
+              "type": "button",
+              "text": "إلغاء الطلب",
+              "x": 543,
+              "y": 544.1875,
+              "width": 834,
+              "height": 44
+            }
+          ],
+          "labels": [],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "my-requests",
+      "route": "/my-requests",
+      "checks": [
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "طلباتي | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "طلباتي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "profile-account",
+      "route": "/students/qa-owner",
+      "checks": [
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "حساب فحص محلي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "profile-display-name",
+              "type": "text",
+              "text": "",
+              "x": 31,
+              "y": 321.25,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "profile-email",
+              "type": "text",
+              "text": "",
+              "x": 31,
+              "y": 422.828125,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "profile-department",
+              "type": "text",
+              "text": "",
+              "x": 31,
+              "y": 555.28125,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "حفظ التعديلات",
+              "x": 31,
+              "y": 623.28125,
+              "width": 313,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم الظاهر *",
+              "x": 31,
+              "y": 287.671875,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني ",
+              "x": 31,
+              "y": 389.25,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص ",
+              "x": 31,
+              "y": 521.703125,
+              "width": 313,
+              "height": 27.1875
+            }
+          ],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "حساب فحص محلي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "profile-display-name",
+              "type": "text",
+              "text": "",
+              "x": 96.03125,
+              "y": 330.359375,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "profile-email",
+              "type": "text",
+              "text": "",
+              "x": 96.03125,
+              "y": 431.9375,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "profile-department",
+              "type": "text",
+              "text": "",
+              "x": 96.03125,
+              "y": 564.390625,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "حفظ التعديلات",
+              "x": 96.03125,
+              "y": 632.390625,
+              "width": 631.9375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم الظاهر *",
+              "x": 96.03125,
+              "y": 296.78125,
+              "width": 631.9375,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني ",
+              "x": 96.03125,
+              "y": 398.359375,
+              "width": 631.9375,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص ",
+              "x": 96.03125,
+              "y": 530.8125,
+              "width": 631.9375,
+              "height": 27.1875
+            }
+          ],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "حساب فحص محلي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "",
+              "type": "button",
+              "text": "تسجيل الخروج",
+              "x": 50,
+              "y": 17,
+              "width": 140.984375,
+              "height": 44
+            },
+            {
+              "id": "profile-display-name",
+              "type": "text",
+              "text": "",
+              "x": 583,
+              "y": 394.046875,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "profile-email",
+              "type": "text",
+              "text": "",
+              "x": 583,
+              "y": 495.625,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "profile-department",
+              "type": "text",
+              "text": "",
+              "x": 583,
+              "y": 628.078125,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "حفظ التعديلات",
+              "x": 583,
+              "y": 696.078125,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم الظاهر *",
+              "x": 583,
+              "y": 360.46875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني ",
+              "x": 583,
+              "y": 462.046875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص ",
+              "x": 583,
+              "y": 594.5,
+              "width": 614,
+              "height": 27.1875
+            }
+          ],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "حساب فحص محلي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "",
+              "type": "button",
+              "text": "تسجيل الخروج",
+              "x": 370,
+              "y": 17,
+              "width": 140.984375,
+              "height": 44
+            },
+            {
+              "id": "profile-display-name",
+              "type": "text",
+              "text": "",
+              "x": 903,
+              "y": 405.25,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "profile-email",
+              "type": "text",
+              "text": "",
+              "x": 903,
+              "y": 506.828125,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "profile-department",
+              "type": "text",
+              "text": "",
+              "x": 903,
+              "y": 639.28125,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "حفظ التعديلات",
+              "x": 903,
+              "y": 707.28125,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم الظاهر *",
+              "x": 903,
+              "y": 371.671875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني ",
+              "x": 903,
+              "y": 473.25,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص ",
+              "x": 903,
+              "y": 605.703125,
+              "width": 614,
+              "height": 27.1875
+            }
+          ],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "profile",
+      "route": "/students/student-ahmed",
+      "checks": [
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أحمد سامي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أحمد سامي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أحمد سامي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "ملف الطالب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أحمد سامي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "register",
+      "route": "/register",
+      "checks": [
+        {
+          "title": "إنشاء حساب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "إنشاء حساب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "register-name",
+              "type": "text",
+              "text": "",
+              "x": 31,
+              "y": 321.25,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "register-email",
+              "type": "email",
+              "text": "",
+              "x": 31,
+              "y": 422.828125,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "register-password",
+              "type": "password",
+              "text": "",
+              "x": 31,
+              "y": 524.40625,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "register-confirm-password",
+              "type": "password",
+              "text": "",
+              "x": 31,
+              "y": 660.859375,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "register-department",
+              "type": "text",
+              "text": "",
+              "x": 31,
+              "y": 762.4375,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "register-terms",
+              "type": "checkbox",
+              "text": "",
+              "x": 324,
+              "y": 835.234375,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إنشاء الحساب",
+              "x": 31,
+              "y": 900.8125,
+              "width": 313,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 31,
+              "y": 287.671875,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 31,
+              "y": 389.25,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 31,
+              "y": 490.828125,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "تأكيد كلمة المرور *",
+              "x": 31,
+              "y": 627.28125,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص *",
+              "x": 31,
+              "y": 728.859375,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على استخدام المنصة لإدارة طلباتي وبيانات ملفي التعريفي.",
+              "x": 31,
+              "y": 830.4375,
+              "width": 313,
+              "height": 54.375
+            }
+          ],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "إنشاء حساب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "إنشاء حساب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "register-name",
+              "type": "text",
+              "text": "",
+              "x": 68.03125,
+              "y": 330.359375,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "register-email",
+              "type": "email",
+              "text": "",
+              "x": 68.03125,
+              "y": 431.9375,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "register-password",
+              "type": "password",
+              "text": "",
+              "x": 394,
+              "y": 533.515625,
+              "width": 305.96875,
+              "height": 52
+            },
+            {
+              "id": "register-confirm-password",
+              "type": "password",
+              "text": "",
+              "x": 68.03125,
+              "y": 533.515625,
+              "width": 305.96875,
+              "height": 52
+            },
+            {
+              "id": "register-department",
+              "type": "text",
+              "text": "",
+              "x": 68.03125,
+              "y": 665.96875,
+              "width": 631.9375,
+              "height": 52
+            },
+            {
+              "id": "register-terms",
+              "type": "checkbox",
+              "text": "",
+              "x": 679.96875,
+              "y": 738.765625,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إنشاء الحساب",
+              "x": 68.03125,
+              "y": 793.96875,
+              "width": 631.9375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 68.03125,
+              "y": 296.78125,
+              "width": 631.9375,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 68.03125,
+              "y": 398.359375,
+              "width": 631.9375,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 394,
+              "y": 499.9375,
+              "width": 305.96875,
+              "height": 27.1875
+            },
+            {
+              "text": "تأكيد كلمة المرور *",
+              "x": 68.03125,
+              "y": 499.9375,
+              "width": 305.96875,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص *",
+              "x": 68.03125,
+              "y": 632.390625,
+              "width": 631.9375,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على استخدام المنصة لإدارة طلباتي وبيانات ملفي التعريفي.",
+              "x": 68.03125,
+              "y": 733.96875,
+              "width": 631.9375,
+              "height": 44
+            }
+          ],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "إنشاء حساب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "إنشاء حساب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "register-name",
+              "type": "text",
+              "text": "",
+              "x": 333,
+              "y": 394.046875,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "register-email",
+              "type": "email",
+              "text": "",
+              "x": 333,
+              "y": 495.625,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "register-password",
+              "type": "password",
+              "text": "",
+              "x": 650,
+              "y": 597.203125,
+              "width": 297,
+              "height": 52
+            },
+            {
+              "id": "register-confirm-password",
+              "type": "password",
+              "text": "",
+              "x": 333,
+              "y": 597.203125,
+              "width": 297,
+              "height": 52
+            },
+            {
+              "id": "register-department",
+              "type": "text",
+              "text": "",
+              "x": 333,
+              "y": 729.65625,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "register-terms",
+              "type": "checkbox",
+              "text": "",
+              "x": 927,
+              "y": 802.453125,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إنشاء الحساب",
+              "x": 333,
+              "y": 857.65625,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 333,
+              "y": 360.46875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 333,
+              "y": 462.046875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 650,
+              "y": 563.625,
+              "width": 297,
+              "height": 27.1875
+            },
+            {
+              "text": "تأكيد كلمة المرور *",
+              "x": 333,
+              "y": 563.625,
+              "width": 297,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص *",
+              "x": 333,
+              "y": 696.078125,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على استخدام المنصة لإدارة طلباتي وبيانات ملفي التعريفي.",
+              "x": 333,
+              "y": 797.65625,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "إنشاء حساب | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "إنشاء حساب"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "register-name",
+              "type": "text",
+              "text": "",
+              "x": 653,
+              "y": 405.25,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "register-email",
+              "type": "email",
+              "text": "",
+              "x": 653,
+              "y": 506.828125,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "register-password",
+              "type": "password",
+              "text": "",
+              "x": 970,
+              "y": 608.40625,
+              "width": 297,
+              "height": 52
+            },
+            {
+              "id": "register-confirm-password",
+              "type": "password",
+              "text": "",
+              "x": 653,
+              "y": 608.40625,
+              "width": 297,
+              "height": 52
+            },
+            {
+              "id": "register-department",
+              "type": "text",
+              "text": "",
+              "x": 653,
+              "y": 740.859375,
+              "width": 614,
+              "height": 52
+            },
+            {
+              "id": "register-terms",
+              "type": "checkbox",
+              "text": "",
+              "x": 1247,
+              "y": 813.65625,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إنشاء الحساب",
+              "x": 653,
+              "y": 868.859375,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 653,
+              "y": 371.671875,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 653,
+              "y": 473.25,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "كلمة المرور *",
+              "x": 970,
+              "y": 574.828125,
+              "width": 297,
+              "height": 27.1875
+            },
+            {
+              "text": "تأكيد كلمة المرور *",
+              "x": 653,
+              "y": 574.828125,
+              "width": 297,
+              "height": 27.1875
+            },
+            {
+              "text": "القسم أو التخصص *",
+              "x": 653,
+              "y": 707.28125,
+              "width": 614,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على استخدام المنصة لإدارة طلباتي وبيانات ملفي التعريفي.",
+              "x": 653,
+              "y": 808.859375,
+              "width": 614,
+              "height": 44
+            }
+          ],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "request-account",
+      "route": "/request/tutoring-calculus",
+      "checks": [
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "request-name",
+              "type": "text",
+              "text": "",
+              "x": 31,
+              "y": 592.65625,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "request-email",
+              "type": "email",
+              "text": "",
+              "x": 31,
+              "y": 698.234375,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "request-contact",
+              "type": "text",
+              "text": "",
+              "x": 31,
+              "y": 803.8125,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "request-date",
+              "type": "date",
+              "text": "",
+              "x": 31,
+              "y": 940.265625,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "request-details",
+              "type": "textarea",
+              "text": "",
+              "x": 31,
+              "y": 1045.84375,
+              "width": 313,
+              "height": 185.90625
+            },
+            {
+              "id": "request-consent",
+              "type": "checkbox",
+              "text": "",
+              "x": 324,
+              "y": 1311.90625,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إرسال الطلب",
+              "x": 31,
+              "y": 1389.484375,
+              "width": 313,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 31,
+              "y": 559.078125,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 31,
+              "y": 664.65625,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "وسيلة التواصل المفضلة *",
+              "x": 31,
+              "y": 770.234375,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "التاريخ المفضل *",
+              "x": 31,
+              "y": 906.6875,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "تفاصيل الطلب *",
+              "x": 31,
+              "y": 1012.265625,
+              "width": 313,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على مشاركة هذه البيانات مع مقدم الخدمة لمعالجة الطلب.",
+              "x": 31,
+              "y": 1307.109375,
+              "width": 313,
+              "height": 54.375
+            }
+          ],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "request-name",
+              "type": "text",
+              "text": "",
+              "x": 394,
+              "y": 558.453125,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "request-email",
+              "type": "email",
+              "text": "",
+              "x": 40.03125,
+              "y": 558.453125,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "request-contact",
+              "type": "text",
+              "text": "",
+              "x": 394,
+              "y": 664.03125,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "request-date",
+              "type": "date",
+              "text": "",
+              "x": 40.03125,
+              "y": 664.03125,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "request-details",
+              "type": "textarea",
+              "text": "",
+              "x": 40.03125,
+              "y": 800.484375,
+              "width": 687.9375,
+              "height": 185.90625
+            },
+            {
+              "id": "request-consent",
+              "type": "checkbox",
+              "text": "",
+              "x": 707.96875,
+              "y": 1042.0625,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إرسال الطلب",
+              "x": 597.609375,
+              "y": 1109.265625,
+              "width": 130.359375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 394,
+              "y": 524.875,
+              "width": 333.96875,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 40.03125,
+              "y": 524.875,
+              "width": 333.96875,
+              "height": 27.1875
+            },
+            {
+              "text": "وسيلة التواصل المفضلة *",
+              "x": 394,
+              "y": 630.453125,
+              "width": 333.96875,
+              "height": 27.1875
+            },
+            {
+              "text": "التاريخ المفضل *",
+              "x": 40.03125,
+              "y": 630.453125,
+              "width": 333.96875,
+              "height": 27.1875
+            },
+            {
+              "text": "تفاصيل الطلب *",
+              "x": 40.03125,
+              "y": 766.90625,
+              "width": 687.9375,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على مشاركة هذه البيانات مع مقدم الخدمة لمعالجة الطلب.",
+              "x": 40.03125,
+              "y": 1037.265625,
+              "width": 687.9375,
+              "height": 44
+            }
+          ],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "",
+              "type": "button",
+              "text": "تسجيل الخروج",
+              "x": 50,
+              "y": 17,
+              "width": 140.984375,
+              "height": 44
+            },
+            {
+              "id": "request-name",
+              "type": "text",
+              "text": "",
+              "x": 650,
+              "y": 663.078125,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-email",
+              "type": "email",
+              "text": "",
+              "x": 223,
+              "y": 663.078125,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-contact",
+              "type": "text",
+              "text": "",
+              "x": 650,
+              "y": 768.65625,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-date",
+              "type": "date",
+              "text": "",
+              "x": 223,
+              "y": 768.65625,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-details",
+              "type": "textarea",
+              "text": "",
+              "x": 223,
+              "y": 905.109375,
+              "width": 834,
+              "height": 185.90625
+            },
+            {
+              "id": "request-consent",
+              "type": "checkbox",
+              "text": "",
+              "x": 1037,
+              "y": 1146.6875,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إرسال الطلب",
+              "x": 926.640625,
+              "y": 1213.890625,
+              "width": 130.359375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 650,
+              "y": 629.5,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 223,
+              "y": 629.5,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "وسيلة التواصل المفضلة *",
+              "x": 650,
+              "y": 735.078125,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "التاريخ المفضل *",
+              "x": 223,
+              "y": 735.078125,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "تفاصيل الطلب *",
+              "x": 223,
+              "y": 871.53125,
+              "width": 834,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على مشاركة هذه البيانات مع مقدم الخدمة لمعالجة الطلب.",
+              "x": 223,
+              "y": 1141.890625,
+              "width": 834,
+              "height": 44
+            }
+          ],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "",
+              "type": "button",
+              "text": "تسجيل الخروج",
+              "x": 370,
+              "y": 17,
+              "width": 140.984375,
+              "height": 44
+            },
+            {
+              "id": "request-name",
+              "type": "text",
+              "text": "",
+              "x": 970,
+              "y": 684.28125,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-email",
+              "type": "email",
+              "text": "",
+              "x": 543,
+              "y": 684.28125,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-contact",
+              "type": "text",
+              "text": "",
+              "x": 970,
+              "y": 789.859375,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-date",
+              "type": "date",
+              "text": "",
+              "x": 543,
+              "y": 789.859375,
+              "width": 407,
+              "height": 52
+            },
+            {
+              "id": "request-details",
+              "type": "textarea",
+              "text": "",
+              "x": 543,
+              "y": 926.3125,
+              "width": 834,
+              "height": 185.90625
+            },
+            {
+              "id": "request-consent",
+              "type": "checkbox",
+              "text": "",
+              "x": 1357,
+              "y": 1167.890625,
+              "width": 20,
+              "height": 20
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "إرسال الطلب",
+              "x": 1246.640625,
+              "y": 1235.09375,
+              "width": 130.359375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "الاسم *",
+              "x": 970,
+              "y": 650.703125,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "البريد الإلكتروني *",
+              "x": 543,
+              "y": 650.703125,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "وسيلة التواصل المفضلة *",
+              "x": 970,
+              "y": 756.28125,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "التاريخ المفضل *",
+              "x": 543,
+              "y": 756.28125,
+              "width": 407,
+              "height": 27.1875
+            },
+            {
+              "text": "تفاصيل الطلب *",
+              "x": 543,
+              "y": 892.734375,
+              "width": 834,
+              "height": 27.1875
+            },
+            {
+              "text": "أوافق على مشاركة هذه البيانات مع مقدم الخدمة لمعالجة الطلب.",
+              "x": 543,
+              "y": 1163.09375,
+              "width": 834,
+              "height": 44
+            }
+          ],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "request",
+      "route": "/request/tutoring-calculus",
+      "checks": [
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            }
+          ],
+          "labels": [],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "طلب خدمة | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "أرسل تفاصيل طلبك"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [],
+          "labels": [],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "route": "/search?q=تصميم",
+      "checks": [
+        {
+          "title": "نتائج البحث | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "نتائج البحث"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 27,
+              "y": 316.75,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 27,
+              "y": 410.828125,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 27,
+              "y": 474.828125,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "-search-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 31,
+              "y": 719.390625,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "-search-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 31,
+              "y": 824.96875,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 31,
+              "y": 892.96875,
+              "width": 313,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 27,
+              "y": 286.671875,
+              "width": 321,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 27,
+              "y": 380.75,
+              "width": 321,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 31,
+              "y": 685.8125,
+              "width": 313,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 31,
+              "y": 791.390625,
+              "width": 313,
+              "height": 85.578125
+            }
+          ],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "نتائج البحث | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "نتائج البحث"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 330.03125,
+              "y": 327.828125,
+              "width": 404.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 115.53125,
+              "y": 327.828125,
+              "width": 202.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 33,
+              "y": 327.828125,
+              "width": 70.53125,
+              "height": 52
+            },
+            {
+              "id": "-search-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 394,
+              "y": 575.421875,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "-search-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 40.03125,
+              "y": 575.421875,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 600.125,
+              "y": 643.421875,
+              "width": 127.84375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 330.03125,
+              "y": 297.75,
+              "width": 404.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 115.53125,
+              "y": 297.75,
+              "width": 202.5,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 394,
+              "y": 541.84375,
+              "width": 333.96875,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 40.03125,
+              "y": 541.84375,
+              "width": 333.96875,
+              "height": 85.578125
+            }
+          ],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "نتائج البحث | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "نتائج البحث"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 512.03125,
+              "y": 390.546875,
+              "width": 700.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 149.53125,
+              "y": 390.546875,
+              "width": 350.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 67,
+              "y": 390.546875,
+              "width": 70.53125,
+              "height": 52
+            },
+            {
+              "id": "-search-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 650,
+              "y": 662.109375,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "-search-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 83,
+              "y": 662.109375,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 1069.15625,
+              "y": 730.109375,
+              "width": 127.84375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 512.03125,
+              "y": 360.46875,
+              "width": 700.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 149.53125,
+              "y": 360.46875,
+              "width": 350.5,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 650,
+              "y": 628.53125,
+              "width": 547,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 83,
+              "y": 628.53125,
+              "width": 547,
+              "height": 85.578125
+            }
+          ],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "نتائج البحث | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "نتائج البحث"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 832.03125,
+              "y": 409.75,
+              "width": 700.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 469.53125,
+              "y": 409.75,
+              "width": 350.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 387,
+              "y": 409.75,
+              "width": 70.53125,
+              "height": 52
+            },
+            {
+              "id": "-search-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 970,
+              "y": 683.3125,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "-search-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 403,
+              "y": 683.3125,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 1389.15625,
+              "y": 751.3125,
+              "width": 127.84375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 832.03125,
+              "y": 379.671875,
+              "width": 700.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 469.53125,
+              "y": 379.671875,
+              "width": 350.5,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 970,
+              "y": 649.734375,
+              "width": 547,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 403,
+              "y": 649.734375,
+              "width": 547,
+              "height": 85.578125
+            }
+          ],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "route": "/services",
+      "checks": [
+        {
+          "title": "الخدمات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "خدمات تساعدك في يومك الجامعي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 10,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 27,
+              "y": 386.9375,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 27,
+              "y": 481.015625,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 27,
+              "y": 545.015625,
+              "width": 321,
+              "height": 52
+            },
+            {
+              "id": "-services-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 31,
+              "y": 789.578125,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "-services-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 31,
+              "y": 895.15625,
+              "width": 313,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 31,
+              "y": 963.15625,
+              "width": 313,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 27,
+              "y": 356.859375,
+              "width": 321,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 27,
+              "y": 450.9375,
+              "width": 321,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 31,
+              "y": 756,
+              "width": 313,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 31,
+              "y": 861.578125,
+              "width": 313,
+              "height": 85.578125
+            }
+          ],
+          "menuOpened": true,
+          "menuClosedOnEscape": true,
+          "width": 375,
+          "errors": []
+        },
+        {
+          "title": "الخدمات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "خدمات تساعدك في يومك الجامعي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "menu-toggle",
+              "type": "button",
+              "text": "فتح القائمة",
+              "x": 16,
+              "y": 15.609375,
+              "width": 107.71875,
+              "height": 46.78125
+            },
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 330.03125,
+              "y": 327.828125,
+              "width": 404.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 115.53125,
+              "y": 327.828125,
+              "width": 202.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 33,
+              "y": 327.828125,
+              "width": 70.53125,
+              "height": 52
+            },
+            {
+              "id": "-services-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 394,
+              "y": 575.421875,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "-services-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 40.03125,
+              "y": 575.421875,
+              "width": 333.96875,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 600.125,
+              "y": 643.421875,
+              "width": 127.84375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 330.03125,
+              "y": 297.75,
+              "width": 404.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 115.53125,
+              "y": 297.75,
+              "width": 202.5,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 394,
+              "y": 541.84375,
+              "width": 333.96875,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 40.03125,
+              "y": 541.84375,
+              "width": 333.96875,
+              "height": 85.578125
+            }
+          ],
+          "width": 768,
+          "errors": []
+        },
+        {
+          "title": "الخدمات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "خدمات تساعدك في يومك الجامعي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 512.03125,
+              "y": 470.546875,
+              "width": 700.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 149.53125,
+              "y": 470.546875,
+              "width": 350.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 67,
+              "y": 470.546875,
+              "width": 70.53125,
+              "height": 52
+            },
+            {
+              "id": "-services-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 650,
+              "y": 742.109375,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "-services-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 83,
+              "y": 742.109375,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 1069.15625,
+              "y": 810.109375,
+              "width": 127.84375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 512.03125,
+              "y": 440.46875,
+              "width": 700.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 149.53125,
+              "y": 440.46875,
+              "width": 350.5,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 650,
+              "y": 708.53125,
+              "width": 547,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 83,
+              "y": 708.53125,
+              "width": 547,
+              "height": 85.578125
+            }
+          ],
+          "accessibility": [],
+          "width": 1280,
+          "errors": []
+        },
+        {
+          "title": "الخدمات | سوق خدمات الطلبة",
+          "direction": "rtl",
+          "h1": [
+            "خدمات تساعدك في يومك الجامعي"
+          ],
+          "mainCount": 1,
+          "overflow": false,
+          "overflowElements": [],
+          "brokenImages": [],
+          "controls": [
+            {
+              "id": "_r_0_-search",
+              "type": "search",
+              "text": "",
+              "x": 832.03125,
+              "y": 497.75,
+              "width": 700.96875,
+              "height": 52
+            },
+            {
+              "id": "_r_0_-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 469.53125,
+              "y": 497.75,
+              "width": 350.5,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "بحث",
+              "x": 387,
+              "y": 497.75,
+              "width": 70.53125,
+              "height": 52
+            },
+            {
+              "id": "-services-category",
+              "type": "select-one",
+              "text": "كل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 970,
+              "y": 771.3125,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "-services-sort",
+              "type": "select-one",
+              "text": "المقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 403,
+              "y": 771.3125,
+              "width": 547,
+              "height": 52
+            },
+            {
+              "id": "",
+              "type": "submit",
+              "text": "تطبيق الفلاتر",
+              "x": 1389.15625,
+              "y": 839.3125,
+              "width": 127.84375,
+              "height": 44
+            }
+          ],
+          "labels": [
+            {
+              "text": "ابحث عن خدمة",
+              "x": 832.03125,
+              "y": 467.671875,
+              "width": 700.96875,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيف",
+              "x": 469.53125,
+              "y": 467.671875,
+              "width": 350.5,
+              "height": 24.484375
+            },
+            {
+              "text": "التصنيفكل التصنيفاتدروس خصوصيةتصميمطباعة",
+              "x": 970,
+              "y": 737.734375,
+              "width": 547,
+              "height": 85.578125
+            },
+            {
+              "text": "الترتيبالمقترحة أولًاالسعر: من الأقل للأعلىالسعر: من الأعلى للأقل",
+              "x": 403,
+              "y": 737.734375,
+              "width": 547,
+              "height": 85.578125
+            }
+          ],
+          "width": 1920,
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "interaction_checks": {
+    "scope": "Browser UI, not live Firebase persistence",
+    "passed": [
+      "التسجيل: أول خطأ يأخذ الفوكس، وخطأ الموافقة مرتبط، والنص يفعل checkbox",
+      "الدخول: إرسال نموذج ناقص ينقل الفوكس إلى البريد",
+      "القائمة: Escape يغلقها ويعيد الفوكس إلى زرها",
+      "الكيبورد: رابط التخطي ينقل التركيز إلى المحتوى",
+      "البحث: انتقال صحيح مع الكلمة والتصنيف ونتائج فعلية من البيانات التجريبية",
+      "البحث: حالة لا توجد نتائج متاحة",
+      "QA محلي فقط: خطأ الطلب ثم تفعيل الموافقة وواجهة النجاح بمعرّف محاكاة",
+      "QA محلي فقط: بطاقتا pending/cancelled وإلغاء الطلب المحلي",
+      "QA محلي فقط: حالة طلباتي empty دون عرض طلبات",
+      "QA محلي فقط: حالة طلباتي error دون عرض طلبات",
+      "QA محلي فقط: تعديل الملف الناقص ينقل الفوكس إلى الاسم"
+    ]
+  },
+  "geometry_checks": {
+    "measured_viewports": 52,
+    "edge_320_routes": [
+      "/",
+      "/services",
+      "/categories",
+      "/search?q=تصميم",
+      "/services/tutoring-calculus",
+      "/request/tutoring-calculus",
+      "/login",
+      "/register",
+      "/my-requests",
+      "/students/student-ahmed"
+    ],
+    "consent": "20×20 inside minimum44px label",
+    "password_alignment": "equal52px and samey",
+    "search_heights": [
+      52,
+      52,
+      52
+    ],
+    "focus": {
+      "hero": {
+        "width": "3px",
+        "color": "rgb(255, 255, 255)"
+      },
+      "search": {
+        "width": "3px",
+        "color": "rgb(24, 91, 71)"
+      }
+    },
+    "long_name_overflow": false
+  }
+}

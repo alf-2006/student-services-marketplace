@@ -6,11 +6,12 @@
 .request-summary {
   margin: 1.5rem 0;
   border-inline-start: 4px solid #d9b35b;
+  padding: clamp(1.25rem, 3vw, 2rem);
 }
 
 .request-summary h2,
 .request-card h2 {
-  margin-block: 0.25rem 0 0.75rem;
+  margin-block: 0.25rem 0.75rem;
 }
 
 .request-summary__price {
@@ -42,11 +43,19 @@
 }
 
 .request-consent input {
-  flex: 0 0 auto;
+  flex: 0 0 1.25rem;
   width: 1.25rem;
   height: 1.25rem;
-  margin-block-start: 0.1rem;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  margin: 0.3rem 0 0;
+  padding: 0;
   accent-color: #185b47;
+}
+
+.request-consent label > span {
+  flex: 1;
+  min-width: 0;
 }
 
 .field--error label {
@@ -70,6 +79,12 @@
 .request-card {
   display: grid;
   gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.request-card h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
 }
 
 .request-card__header {
@@ -79,12 +94,12 @@
   gap: 1rem;
 }
 
-.request-status--pending {
+.request-card .request-status--pending {
   color: #6b4b08;
   background: #fff3cc;
 }
 
-.request-status--cancelled {
+.request-card .request-status--cancelled {
   color: #5d6661;
   background: #e9ece8;
 }

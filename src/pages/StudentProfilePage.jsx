@@ -73,7 +73,12 @@ function AccountProfile({ user, isConfigured }) {
     }
     setFormErrors(errors);
     setSaveMessage('');
-    if (Object.keys(errors).length > 0 || !isConfigured) return;
+    if (Object.keys(errors).length > 0) {
+      const formElement = event.currentTarget;
+      requestAnimationFrame(() => formElement.querySelector('[aria-invalid="true"]')?.focus());
+      return;
+    }
+    if (!isConfigured) return;
 
     setSaving(true);
     try {
@@ -88,10 +93,10 @@ function AccountProfile({ user, isConfigured }) {
     }
   }
 
-  if (loading) return <LoadingState label="جارٍ تحميل الملف…" />;
+  if (loading) return <main className="container page-section"><LoadingState label="جارٍ تحميل الملف…" /></main>;
 
   return (
-    <section className="container page-section profile-page">
+    <main className="container page-section profile-page">
       <div className="page-header">
         <p className="eyebrow">ملف الحساب</p>
         <h1>{profile.displayName || 'ملفك التعريفي'}</h1>
@@ -129,7 +134,7 @@ function AccountProfile({ user, isConfigured }) {
           {saving ? 'جارٍ الحفظ…' : 'حفظ التعديلات'}
         </Button>
       </form>
-    </section>
+    </main>
   );
 }
 
@@ -138,7 +143,7 @@ export default function StudentProfilePage() {
   const { user, loading, isConfigured } = useAuth();
   const student = getStudentById(studentId);
 
-  if (loading) return <LoadingState label="جارٍ تحميل الملف…" />;
+  if (loading) return <main className="container page-section"><LoadingState label="جارٍ تحميل الملف…" /></main>;
 
   if (user && user.uid === studentId) {
     // قائمة بيانات جديدة لكل حساب؛ لا تنتقل بيانات الحساب السابق للحساب الجديد.
@@ -147,21 +152,21 @@ export default function StudentProfilePage() {
 
   if (!student) {
     return (
-      <section className="container page-section">
+      <main className="container page-section">
         <EmptyState
           title="الطالب غير موجود"
           description="لا يوجد ملف عام بهذا المعرّف."
           actionLabel="تصفّح الخدمات"
           actionTo="/services"
         />
-      </section>
+      </main>
     );
   }
 
   const providerServices = services.filter((service) => service.providerId === studentId);
 
   return (
-    <section className="container page-section profile-page">
+    <main className="container page-section profile-page">
       <div className="page-header">
         <p className="eyebrow">ملف عام تجريبي</p>
         <h1>{student.name}</h1>
@@ -179,16 +184,21 @@ export default function StudentProfilePage() {
         <div className="stack">
           <h2>الخدمات المقدمة</h2>
           {providerServices.length > 0 ? (
-            <div className="grid service-grid">
+            <div className="profile-service-list">
               {providerServices.map((service) => (
-                <Link className="card text-link" key={service.id} to={`/services/${service.id}`}>
-                  {service.title}
+                <Link className="card profile-service-card" key={service.id} to={`/services/${service.id}`}>
+                  <h3>{service.title}</h3>
+                  <p className="muted">{service.description}</p>
+                  <div className="profile-service-footer">
+                    <div><strong>{service.price} جنيه</strong> <span className="muted">{service.unit}</span></div>
+                    <span className="text-link">عرض التفاصيل</span>
+                  </div>
                 </Link>
               ))}
             </div>
           ) : <p className="muted">لا توجد خدمات مرتبطة بهذا الملف حالياً.</p>}
         </div>
       </div>
-    </section>
+    </main>
   );
 }

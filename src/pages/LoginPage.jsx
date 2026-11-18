@@ -33,7 +33,12 @@ export default function LoginPage() {
     if (!validateEmail(form.email)) nextErrors.email = 'اكتب بريدًا إلكترونيًا صحيحًا.';
     if (!validatePassword(form.password)) nextErrors.password = 'كلمة المرور يجب أن تكون 8 أحرف على الأقل.';
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length > 0 || !isConfigured) return;
+    if (Object.keys(nextErrors).length > 0) {
+      const formElement = event.currentTarget;
+      requestAnimationFrame(() => formElement.querySelector('[aria-invalid="true"]')?.focus());
+      return;
+    }
+    if (!isConfigured) return;
 
     setSubmitting(true);
     try {
@@ -47,7 +52,7 @@ export default function LoginPage() {
   }
 
   return (
-    <section className="container page-section auth-page">
+    <main className="container page-section auth-page">
       <div className="page-header">
         <p className="eyebrow">حسابك في السوق</p>
         <h1>تسجيل الدخول</h1>
@@ -89,6 +94,6 @@ export default function LoginPage() {
           ليس لديك حساب؟ <Link className="text-link" to={`/register?redirect=${encodeURIComponent(redirectTo)}`}>أنشئ حسابًا</Link>
         </p>
       </form>
-    </section>
+    </main>
   );
 }

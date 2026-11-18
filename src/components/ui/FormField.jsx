@@ -14,7 +14,7 @@ export default function FormField({ label, id, error, hint, required = false, as
   return (
     <div className={fieldClassName}>
       <label htmlFor={id}>
-        {label} {required ? <span aria-hidden="true">*</span> : null}
+        {label} {required ? <span className="required-marker" aria-hidden="true">*</span> : null}
       </label>
       {as === 'textarea' ? <textarea {...commonProps}>{children}</textarea> : null}
       {as === 'select' ? <select {...commonProps}>{children}</select> : null}

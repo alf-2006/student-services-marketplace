@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -58,6 +58,17 @@ describe('نموذج الطلب المبسط', () => {
     openForm();
     fireEvent.click(screen.getByRole('button', { name: 'إرسال الطلب' }));
     expect(screen.getByText('راجع الحقول المميزة بالأخطاء ثم أرسل النموذج مجددًا.')).toBeInTheDocument();
+    expect(state.createRequest).not.toHaveBeenCalled();
+  });
+
+  it('يربط خطأ الموافقة بالحقل ويضع الفوكس عليه إذا كانت بقية البيانات صحيحة', async () => {
+    openForm();
+    fillForm();
+    fireEvent.click(screen.getByRole('checkbox'));
+    fireEvent.click(screen.getByRole('button', { name: 'إرسال الطلب' }));
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toHaveAttribute('aria-describedby', 'request-consent-error');
+    await waitFor(() => expect(checkbox).toHaveFocus());
     expect(state.createRequest).not.toHaveBeenCalled();
   });
 

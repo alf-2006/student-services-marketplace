@@ -1,13 +1,27 @@
-/* أنماط الوحدة الخاصة بالحسابات؛ المتغيرات العامة تأتي من styles/variables.css. */
+/* أنماط الحساب والملف؛ نحافظ على نفس ألوان ومكونات الموقع. */
+.auth-page {
+  max-width: 960px;
+}
+
 .auth-page,
 .profile-page {
-  max-width: 960px;
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.auth-page .page-header {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.auth-page h1,
+.profile-page h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
 }
 
 .auth-form {
   max-width: 680px;
   margin-inline: auto;
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
 }
 
 .auth-form__footer {
@@ -24,33 +38,51 @@
 }
 
 .checkbox-label input {
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
-  flex: 0 0 auto;
-  margin-top: 0.15rem;
-  accent-color: var(--color-forest, #185b47);
+  width: 1.25rem;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  flex: 0 0 1.25rem;
+  margin: 0.3rem 0 0;
+  padding: 0;
+  accent-color: var(--color-forest);
+}
+
+.checkbox-label > span {
+  flex: 1;
+  min-width: 0;
 }
 
 .field--error .checkbox-label {
-  color: #9a2f2f;
+  color: var(--color-danger);
 }
 
 .profile-layout {
   display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
   gap: 1.5rem;
   align-items: start;
+}
+
+.profile-layout > .stack > h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .profile-card {
   display: grid;
   gap: 0.75rem;
-  padding: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .profile-card h2,
 .profile-card p {
   margin: 0;
+}
+
+.profile-card .badge {
+  width: fit-content;
+  justify-self: start;
 }
 
 .profile-avatar {
@@ -59,7 +91,7 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: var(--color-forest, #185b47);
+  background: var(--color-forest);
   color: #fff;
   font-size: 1.35rem;
   font-weight: 800;
@@ -67,9 +99,42 @@
 
 .profile-edit-form {
   max-width: 680px;
+  padding: clamp(1.25rem, 3vw, 2rem);
 }
 
-@media (max-width: 700px) {
+.profile-service-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.profile-service-card {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.profile-service-card:hover {
+  border-color: var(--color-forest);
+}
+
+.profile-service-card h3,
+.profile-service-card p {
+  margin: 0;
+}
+
+.profile-service-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+@media (max-width: 800px) {
   .profile-layout {
     grid-template-columns: 1fr;
   }
