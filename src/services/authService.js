@@ -4,8 +4,8 @@ import {
   signOut,
   updateProfile,
 } from 'firebase/auth';
-import { firebaseAuth, firebaseConfigurationError, isFirebaseConfigured } from '../../lib/firebase/firebase.js';
-import { saveUserProfile } from '../profile/profileService.js';
+import { firebaseAuth, firebaseConfigurationError, isFirebaseConfigured } from '../firebase.js';
+import { saveUserProfile } from './profileService.js';
 
 const fallbackRedirect = '/';
 

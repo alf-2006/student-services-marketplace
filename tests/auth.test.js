@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getSafeRedirect, mapAuthError } from '../src/features/auth/authService.js';
+import { getSafeRedirect, mapAuthError } from '../src/services/authService.js';
 
 describe('خدمات الحساب الآمنة', () => {
   it('يقبل مسارًا داخليًا ويحافظ على query وhash', () => {

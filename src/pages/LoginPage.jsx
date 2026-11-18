@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import FormField from '../components/ui/FormField.jsx';
 import Button from '../components/ui/Button.jsx';
-import { useAuth } from '../features/auth/hooks/useAuth.js';
-import { getSafeRedirect } from '../features/auth/authService.js';
+import { useAuth } from '../hooks/useAuth.js';
+import { getSafeRedirect } from '../services/authService.js';
 import { validateEmail, validatePassword } from '../utils/validators.js';
 import '../styles/auth.css';
 

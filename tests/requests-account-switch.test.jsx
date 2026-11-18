@@ -2,9 +2,9 @@ import { act, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 const state = vi.hoisted(() => ({ user: { uid: 'first' }, getUserRequests: vi.fn(), cancelServiceRequest: vi.fn() }));
-vi.mock('../src/features/auth/hooks/useAuth.js', () => ({ useAuth: () => ({ user: state.user, loading: false, isConfigured: true }) }));
-vi.mock('../src/lib/firebase/firebase.js', () => ({ isFirebaseConfigured: true }));
-vi.mock('../src/features/requests/requestsService.js', () => ({ getUserRequests: state.getUserRequests, cancelServiceRequest: state.cancelServiceRequest }));
+vi.mock('../src/hooks/useAuth.js', () => ({ useAuth: () => ({ user: state.user, loading: false, isConfigured: true }) }));
+vi.mock('../src/firebase.js', () => ({ isFirebaseConfigured: true }));
+vi.mock('../src/services/requestsService.js', () => ({ getUserRequests: state.getUserRequests, cancelServiceRequest: state.cancelServiceRequest }));
 import MyRequestsPage from '../src/pages/MyRequestsPage.jsx';
 function deferred() { let resolve; const promise = new Promise((done) => { resolve = done; }); return { promise, resolve }; }
 const row = (id, title) => ({ id, serviceTitle: title, preferredDate: '2999-12-31', status: 'pending' });

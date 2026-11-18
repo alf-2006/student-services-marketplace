@@ -1,93 +1,136 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../components/ui/Button.jsx';
 import EmptyState from '../components/ui/EmptyState.jsx';
 import LoadingState from '../components/ui/LoadingState.jsx';
-import { useAuth } from '../features/auth/hooks/useAuth.js';
-import { getUserRequests, cancelServiceRequest } from '../features/requests/requestsService.js';
-import { isFirebaseConfigured } from '../lib/firebase/firebase.js';
+import { useAuth } from '../hooks/useAuth.js';
+import { getUserRequests, cancelServiceRequest } from '../services/requestsService.js';
+import { isFirebaseConfigured } from '../firebase.js';
 import '../styles/requests.css';
 
 function readableRequestsError(error) {
-  if (error?.code === 'firebase-not-configured') return 'لم يتم إعداد Firebase بعد. لا يمكن تحميل الطلبات قبل إضافة إعدادات VITE_FIREBASE_*.';
-  if (error?.code === 'permission-denied') return 'رفض Firebase قراءة الطلبات. يمكن للحساب قراءة طلباته التي يملكها فقط.';
+  if (error?.code === 'firebase-not-configured') {
+    return 'لم يتم إعداد Firebase بعد. لا يمكن تحميل الطلبات قبل إضافة إعدادات VITE_FIREBASE_*.';
+  }
+  if (error?.code === 'permission-denied') {
+    return 'رفض Firebase قراءة الطلبات. يمكن للحساب قراءة طلباته التي يملكها فقط.';
+  }
   return 'تعذر تحميل الطلبات بسبب مشكلة في الاتصال. حاول مجددًا لاحقًا.';
 }
 
-function statusLabel(status) {
-  return status === 'cancelled' ? 'ملغى' : 'قيد المراجعة';
+function RequestList({ userId }) {
+  const [requests, setRequests] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [cancellingId, setCancellingId] = useState('');
+  const [reload, setReload] = useState(0);
+
+  useEffect(() => {
+    let ignoreResult = false;
+
+    async function loadRequests() {
+      setLoading(true);
+      setError('');
+      try {
+        const result = await getUserRequests(userId);
+        if (!ignoreResult) setRequests(result);
+      } catch (loadError) {
+        if (!ignoreResult) setError(readableRequestsError(loadError));
+      } finally {
+        if (!ignoreResult) setLoading(false);
+      }
+    }
+
+    loadRequests();
+    // لا نعرض نتيجة تحميل قديم بعد إغلاق القائمة أو إعادة تحميلها.
+    return () => { ignoreResult = true; };
+  }, [userId, reload]);
+
+  function reloadRequests() {
+    setReload(reload + 1);
+  }
+
+  async function cancelRequest(requestId) {
+    if (cancellingId) return;
+    setCancellingId(requestId);
+    setError('');
+
+    try {
+      const result = await cancelServiceRequest({ requestId, userId });
+      if (result?.status !== 'cancelled') throw new Error('لم يؤكد Firebase الإلغاء.');
+
+      // نغيّر البطاقة فقط بعد نجاح الحفظ في Firebase.
+      setRequests(function (currentRequests) {
+        return currentRequests.map(function (request) {
+          if (request.id === requestId) return { ...request, status: 'cancelled' };
+          return request;
+        });
+      });
+    } catch (cancelError) {
+      if (cancelError?.code === 'permission-denied') {
+        setError('لا يمكن إلغاء هذا الطلب؛ تحقق من ملكية الحساب وحالة الطلب.');
+      } else {
+        setError('تعذر إلغاء الطلب. لم نغيّر حالته محليًا، ويمكنك المحاولة مجددًا.');
+      }
+    } finally {
+      setCancellingId('');
+    }
+  }
+
+  return (
+    <>
+      {error && <p className="notice notice-error" role="alert">{error}</p>}
+      {error && !loading && (
+        <Button type="button" onClick={reloadRequests} disabled={Boolean(cancellingId)}>
+          إعادة تحميل الطلبات
+        </Button>
+      )}
+      {loading && <LoadingState label="جارٍ تحميل طلباتك…" />}
+      {!loading && !error && requests.length === 0 && (
+        <EmptyState
+          title="لا توجد طلبات بعد"
+          description="عندما ترسل طلب خدمة محفوظًا فعليًا سيظهر هنا."
+          actionLabel="تصفح الخدمات"
+          actionTo="/services"
+        />
+      )}
+      {!loading && requests.length > 0 && (
+        <section className="request-list" aria-label="قائمة الطلبات">
+          {requests.map((request) => (
+            <article className="request-card card" key={request.id}>
+              <div className="request-card__header">
+                <div>
+                  <p className="eyebrow">طلب محفوظ</p>
+                  <h2>{request.serviceTitle}</h2>
+                </div>
+                <span className={`badge request-status request-status--${request.status}`}>
+                  {request.status === 'cancelled' ? 'ملغى' : 'قيد المراجعة'}
+                </span>
+              </div>
+              <dl className="request-card__details">
+                <div><dt>التاريخ المفضل</dt><dd>{request.preferredDate}</dd></div>
+                <div><dt>رقم الطلب</dt><dd>{request.id}</dd></div>
+              </dl>
+              {request.status === 'pending' && (
+                <Button
+                  type="button"
+                  variant="secondary"
+                  disabled={Boolean(cancellingId)}
+                  onClick={() => cancelRequest(request.id)}
+                >
+                  {cancellingId === request.id ? 'جارٍ الإلغاء…' : 'إلغاء الطلب'}
+                </Button>
+              )}
+            </article>
+          ))}
+        </section>
+      )}
+    </>
+  );
 }
 
 export default function MyRequestsPage() {
-  const { user, loading: authLoading, isConfigured } = useAuth();
-  const uid = user?.uid ?? null;
-  const [requests, setRequests] = useState([]);
-  const [requestsOwner, setRequestsOwner] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [cancellingId, setCancellingId] = useState('');
+  const { user, loading, isConfigured } = useAuth();
   const configured = isConfigured !== false && isFirebaseConfigured;
-  const currentUid = useRef(uid);
-  const generation = useRef(0);
-  const mounted = useRef(false);
-  currentUid.current = uid;
-
-  useEffect(() => {
-    mounted.current = true;
-    return () => { mounted.current = false; generation.current += 1; };
-  }, []);
-
-  const loadRequests = useCallback(async () => {
-    if (!uid || !configured || !mounted.current) return;
-    const token = ++generation.current;
-    const isCurrent = () => mounted.current && currentUid.current === uid && generation.current === token;
-    setRequestsOwner(uid);
-    setLoading(true);
-    setError('');
-    try {
-      const result = await getUserRequests(uid);
-      if (isCurrent()) setRequests(result);
-    } catch (loadError) {
-      if (isCurrent()) setError(readableRequestsError(loadError));
-    } finally {
-      if (isCurrent()) setLoading(false);
-    }
-  }, [configured, uid]);
-
-  useEffect(() => {
-    setRequests([]);
-    setRequestsOwner(uid);
-    setError('');
-    setCancellingId('');
-    setLoading(false);
-    if (uid && configured && !authLoading) loadRequests();
-    return () => { generation.current += 1; };
-  }, [authLoading, configured, loadRequests, uid]);
-
-  const cancel = async (requestId) => {
-    if (!uid || cancellingId || requestsOwner !== uid) return;
-    const token = generation.current;
-    const isCurrent = () => mounted.current && currentUid.current === uid && generation.current === token;
-    setCancellingId(requestId);
-    setError('');
-    try {
-      const result = await cancelServiceRequest({ requestId, userId: uid });
-      if (result?.status !== 'cancelled') throw new Error('لم يؤكد Firebase الإلغاء.');
-      if (isCurrent()) setRequests((current) => current.map((item) => item.id === requestId ? { ...item, status: 'cancelled' } : item));
-    } catch (cancelError) {
-      if (isCurrent()) setError(cancelError?.code === 'permission-denied'
-        ? 'لا يمكن إلغاء هذا الطلب؛ تحقق من ملكية الحساب وحالة الطلب.'
-        : 'تعذر إلغاء الطلب. لم نغيّر حالته محليًا، ويمكنك المحاولة مجددًا.');
-    } finally {
-      if (isCurrent()) setCancellingId('');
-    }
-  };
-
-  // إخفاء بيانات المالك القديم يحدث في render نفسه، قبل تشغيل effect للحساب الجديد.
-  const ownsState = Boolean(uid) && requestsOwner === uid;
-  const visibleRequests = ownsState ? requests : [];
-  const visibleError = ownsState ? error : '';
-  const ready = !authLoading && user && configured;
-  const visibleLoading = ready && (!ownsState || loading);
 
   return (
     <main className="page-section container requests-page">
@@ -96,46 +139,27 @@ export default function MyRequestsPage() {
         <h1>طلباتي</h1>
         <p className="muted">هذه القائمة تقرأ طلبات حسابك فقط من Firestore.</p>
       </header>
-      {authLoading && <LoadingState label="نتحقق من حسابك…" />}
-      {!authLoading && !user && (
+      {loading && <LoadingState label="نتحقق من حسابك…" />}
+      {!loading && !user && (
         <section className="notice notice-error" role="alert">
           <h2>سجّل الدخول لرؤية طلباتك</h2>
-          <p>{configured ? 'لا يمكن عرض طلبات حساب غير مسجل.' : 'إعداد Firebase غير مكتمل؛ لن نعرض بيانات وهمية أو نعدك بنتيجة غير حقيقية.'}</p>
+          <p>
+            {configured
+              ? 'لا يمكن عرض طلبات حساب غير مسجل.'
+              : 'إعداد Firebase غير مكتمل؛ لن نعرض بيانات وهمية أو نعدك بنتيجة غير حقيقية.'}
+          </p>
           <Button to="/login?redirect=%2Fmy-requests">تسجيل الدخول</Button>
         </section>
       )}
-      {!authLoading && user && !configured && (
+      {!loading && user && !configured && (
         <section className="notice notice-error" role="alert">
           <h2>Firebase غير مُعد</h2>
           <p>أضف إعدادات VITE_FIREBASE_* حتى يمكن تحميل طلباتك من Firestore. لا توجد بيانات تجريبية في هذه الصفحة.</p>
         </section>
       )}
-      {ready && visibleError && <p className="notice notice-error" role="alert">{visibleError}</p>}
-      {ready && visibleError && !visibleLoading && <Button type="button" onClick={loadRequests}>إعادة تحميل الطلبات</Button>}
-      {visibleLoading && <LoadingState label="جارٍ تحميل طلباتك…" />}
-      {ready && !visibleLoading && !visibleError && visibleRequests.length === 0 && (
-        <EmptyState title="لا توجد طلبات بعد" description="عندما ترسل طلب خدمة محفوظًا فعليًا سيظهر هنا." actionLabel="تصفح الخدمات" actionTo="/services" />
-      )}
-      {ready && !visibleLoading && visibleRequests.length > 0 && (
-        <section className="request-list" aria-label="قائمة الطلبات">
-          {visibleRequests.map((request) => (
-            <article className="request-card card" key={request.id}>
-              <div className="request-card__header">
-                <div><p className="eyebrow">طلب محفوظ</p><h2>{request.serviceTitle}</h2></div>
-                <span className={`badge request-status request-status--${request.status}`}>{statusLabel(request.status)}</span>
-              </div>
-              <dl className="request-card__details">
-                <div><dt>التاريخ المفضل</dt><dd>{request.preferredDate}</dd></div>
-                <div><dt>رقم الطلب</dt><dd>{request.id}</dd></div>
-              </dl>
-              {request.status === 'pending' && (
-                <Button type="button" variant="secondary" disabled={Boolean(cancellingId)} onClick={() => cancel(request.id)}>
-                  {cancellingId === request.id ? 'جارٍ الإلغاء…' : 'إلغاء الطلب'}
-                </Button>
-              )}
-            </article>
-          ))}
-        </section>
+      {!loading && user && configured && (
+        // تغيير key ينشئ قائمة جديدة فارغة فورًا عند تغيير الحساب.
+        <RequestList key={user.uid} userId={user.uid} />
       )}
     </main>
   );

@@ -16,7 +16,7 @@ function isRealDateOnly(value) {
   );
 }
 
-function todayDateOnly() {
+export function todayDateOnly() {
   const now = new Date();
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, '0');

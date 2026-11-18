@@ -20,12 +20,12 @@ vi.mock('firebase/firestore', () => ({
   where,
 }));
 
-vi.mock('../src/lib/firebase/firebase.js', () => ({
+vi.mock('../src/firebase.js', () => ({
   firebaseDb: { name: 'test-db' },
   isFirebaseConfigured: true,
 }));
 
-const { cancelServiceRequest, createServiceRequest, getUserRequests } = await import('../src/features/requests/requestsService.js');
+const { cancelServiceRequest, createServiceRequest, getUserRequests } = await import('../src/services/requestsService.js');
 
 describe('requestsService', () => {
   beforeEach(() => {

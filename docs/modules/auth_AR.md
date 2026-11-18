@@ -4,10 +4,10 @@
 
 ## الواجهات الأساسية
 
-- `src/lib/firebase/firebase.js`: يصدّر `firebaseApp` و`firebaseAuth` و`firebaseDb` و`isFirebaseConfigured` و`firebaseMode` و`firebaseConfigurationError`.
-- `AuthProvider` من `src/features/auth/context/AuthContext.jsx` و`useAuth` من `src/features/auth/hooks/useAuth.js`. يعرض الـhook حالة `{user, loading, authError, login, register, logout, isConfigured}`.
-- `src/features/auth/authService.js`: يوفّر `getSafeRedirect` الذي يقبل مسارًا داخليًا يبدأ بشرطة واحدة فقط، ويحوّل أخطاء Firebase المعروفة إلى رسائل عربية دون كشف تفاصيل داخلية.
-- `src/features/profile/profileService.js`: يقرأ ويكتب `profiles/{uid}` مع التحقق من وجود المستخدم، ويكتب الحد الأدنى `{uid, displayName, email, department, createdAt}`. لا يأخذ `uid` من نموذج المستخدم.
+- `src/firebase.js`: يصدّر `firebaseApp` و`firebaseAuth` و`firebaseDb` و`isFirebaseConfigured` و`firebaseMode` و`firebaseConfigurationError`.
+- `AuthProvider` من `src/context/AuthContext.jsx` و`useAuth` من `src/hooks/useAuth.js`. يعرض الـhook حالة `{user, loading, authError, login, register, logout, isConfigured}`.
+- `src/services/authService.js`: يوفّر `getSafeRedirect` الذي يقبل مسارًا داخليًا يبدأ بشرطة واحدة فقط، ويحوّل أخطاء Firebase المعروفة إلى رسائل عربية دون كشف تفاصيل داخلية.
+- `src/services/profileService.js`: يقرأ ويكتب `profiles/{uid}` مع التحقق من وجود المستخدم، ويكتب الحد الأدنى `{uid, displayName, email, department, createdAt}`. لا يأخذ `uid` من نموذج المستخدم.
 
 ## التشغيل والإعداد
 

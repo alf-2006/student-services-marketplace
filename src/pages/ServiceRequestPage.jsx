@@ -1,19 +1,14 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Button from '../components/ui/Button.jsx';
 import EmptyState from '../components/ui/EmptyState.jsx';
 import FormField from '../components/ui/FormField.jsx';
-import { useAuth } from '../features/auth/hooks/useAuth.js';
+import { useAuth } from '../hooks/useAuth.js';
 import { getServiceById } from '../data/services.js';
-import { isFirebaseConfigured } from '../lib/firebase/firebase.js';
-import { createServiceRequest } from '../features/requests/requestsService.js';
-import { validateRequest } from '../utils/validators.js';
+import { isFirebaseConfigured } from '../firebase.js';
+import { createServiceRequest } from '../services/requestsService.js';
+import { todayDateOnly, validateRequest } from '../utils/validators.js';
 import '../styles/requests.css';
-
-function todayDateOnly() {
-  const date = new Date();
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-}
 
 function readableRequestError(error) {
   if (error?.code === 'firebase-not-configured') {
@@ -28,7 +23,8 @@ function readableRequestError(error) {
 export default function ServiceRequestPage() {
   const { serviceId } = useParams();
   const { user, loading: authLoading, isConfigured } = useAuth();
-  const service = useMemo(() => getServiceById(serviceId), [serviceId]);
+  const service = getServiceById(serviceId);
+  const configured = isConfigured !== false && isFirebaseConfigured;
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -42,6 +38,7 @@ export default function ServiceRequestPage() {
   const [success, setSuccess] = useState('');
   const [saving, setSaving] = useState(false);
 
+  // نملأ الاسم والبريد من الحساب، مع السماح بتعديل بيانات التواصل في الطلب.
   useEffect(() => {
     if (!user) return;
     setForm((current) => ({
@@ -50,6 +47,48 @@ export default function ServiceRequestPage() {
       email: current.email || user.email || '',
     }));
   }, [user]);
+
+  function updateField(event) {
+    const { name, type, value, checked } = event.target;
+    const fieldValue = type === 'checkbox' ? checked : value;
+    setForm((current) => ({ ...current, [name]: fieldValue }));
+    setErrors((current) => ({ ...current, [name]: '' }));
+    setFormError('');
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (saving) return;
+    setSuccess('');
+    setFormError('');
+
+    // نفحص المدخلات أولًا، ثم الحساب، ثم نحاول الحفظ.
+    const nextErrors = validateRequest(form);
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      setFormError('راجع الحقول المميزة بالأخطاء ثم أرسل النموذج مجددًا.');
+      return;
+    }
+    if (!user) {
+      setFormError('يجب تسجيل الدخول بحساب حقيقي قبل إرسال طلب الخدمة.');
+      return;
+    }
+    if (!configured) {
+      setFormError('لم يتم إعداد Firebase بعد. لن نعلن نجاحًا قبل تفعيل الاتصال الحقيقي.');
+      return;
+    }
+
+    setSaving(true);
+    try {
+      const result = await createServiceRequest({ user, service, form });
+      if (!result?.id) throw new Error('لم يُرجع Firebase معرّف الطلب.');
+      setSuccess(`تم حفظ طلبك بنجاح برقم ${result.id}.`);
+    } catch (error) {
+      setFormError(readableRequestError(error));
+    } finally {
+      setSaving(false);
+    }
+  }
 
   if (!service) {
     return (
@@ -64,47 +103,7 @@ export default function ServiceRequestPage() {
     );
   }
 
-  const updateField = (field) => (event) => {
-    const value = field === 'consent' ? event.target.checked : event.target.value;
-    setForm((current) => ({ ...current, [field]: value }));
-    if (errors[field]) setErrors((current) => ({ ...current, [field]: '' }));
-    if (formError) setFormError('');
-  };
-
-  const submit = async (event) => {
-    event.preventDefault();
-    setSuccess('');
-    setFormError('');
-    const nextErrors = validateRequest(form);
-    setErrors(nextErrors);
-    if (Object.keys(nextErrors).length > 0) {
-      setFormError('راجع الحقول المميزة بالأخطاء ثم أرسل النموذج مجددًا.');
-      return;
-    }
-    if (!user) {
-      setFormError('يجب تسجيل الدخول بحساب حقيقي قبل إرسال طلب الخدمة.');
-      return;
-    }
-    if (!isConfigured || !isFirebaseConfigured) {
-      setFormError('لم يتم إعداد Firebase بعد. لن نعلن نجاحًا قبل تفعيل الاتصال الحقيقي.');
-      return;
-    }
-
-    setSaving(true);
-    try {
-      const result = await createServiceRequest({ user, service, form });
-      if (!result?.id) throw new Error('لم يُرجع Firebase معرّف الطلب.');
-      setSuccess(`تم حفظ طلبك بنجاح برقم ${result.id}.`);
-      setFormError('');
-    } catch (error) {
-      setFormError(readableRequestError(error));
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const loginPath = `/login?redirect=${encodeURIComponent(`/request/${service.id}`)}`;
-  const configured = isConfigured !== false && isFirebaseConfigured;
+  const loginPath = '/login?redirect=' + encodeURIComponent('/request/' + service.id);
 
   return (
     <main className="page-section container request-page">
@@ -123,31 +122,86 @@ export default function ServiceRequestPage() {
         </p>
       </section>
 
-      {authLoading ? (
-        <p className="notice" aria-live="polite">نتحقق من حالة تسجيل الدخول…</p>
-      ) : !user ? (
+      {authLoading && <p className="notice" aria-live="polite">نتحقق من حالة تسجيل الدخول…</p>}
+      {!authLoading && !user && (
         <section className="notice notice-error" role="alert">
           <h2>يلزم تسجيل الدخول</h2>
-          <p>
-            لا نستخدم دخولًا وهميًا ولا نحفظ كلمات المرور محليًا. سجّل الدخول بحساب Firebase حقيقي لإرسال هذا الطلب.
-          </p>
+          <p>لا نستخدم دخولًا وهميًا ولا نحفظ كلمات المرور محليًا. سجّل الدخول بحساب Firebase حقيقي لإرسال هذا الطلب.</p>
           {!configured && <p>إعداد Firebase غير مكتمل حاليًا؛ سيظل التصفح متاحًا ولن يتم الادعاء بحفظ الطلب.</p>}
           <Button to={configured ? loginPath : '/login'}>الانتقال إلى تسجيل الدخول</Button>
         </section>
-      ) : (
-        <form className="request-form panel" onSubmit={submit} noValidate>
+      )}
+      {!authLoading && user && (
+        <form className="request-form panel" onSubmit={handleSubmit} noValidate>
           {formError && <p className="notice notice-error" role="alert">{formError}</p>}
           {success && <p className="notice notice-success" role="status" aria-live="polite">{success}</p>}
           <div className="form-grid">
-            <FormField label="الاسم" id="request-name" error={errors.name} required name="name" value={form.name} onChange={updateField('name')} autoComplete="name" />
-            <FormField label="البريد الإلكتروني" id="request-email" error={errors.email} required name="email" type="email" value={form.email} onChange={updateField('email')} autoComplete="email" />
-            <FormField label="وسيلة التواصل المفضلة" id="request-contact" error={errors.contact} hint="مثل بريدك الجامعي أو رقم يمكن التواصل عبره." required name="contact" value={form.contact} onChange={updateField('contact')} />
-            <FormField label="التاريخ المفضل" id="request-date" error={errors.preferredDate} required name="preferredDate" type="date" min={todayDateOnly()} value={form.preferredDate} onChange={updateField('preferredDate')} />
+            <FormField
+              label="الاسم"
+              id="request-name"
+              name="name"
+              value={form.name}
+              onChange={updateField}
+              error={errors.name}
+              autoComplete="name"
+              required
+            />
+            <FormField
+              label="البريد الإلكتروني"
+              id="request-email"
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={updateField}
+              error={errors.email}
+              autoComplete="email"
+              required
+            />
+            <FormField
+              label="وسيلة التواصل المفضلة"
+              id="request-contact"
+              name="contact"
+              hint="مثل بريدك الجامعي أو رقم يمكن التواصل عبره."
+              value={form.contact}
+              onChange={updateField}
+              error={errors.contact}
+              required
+            />
+            <FormField
+              label="التاريخ المفضل"
+              id="request-date"
+              name="preferredDate"
+              type="date"
+              min={todayDateOnly()}
+              value={form.preferredDate}
+              onChange={updateField}
+              error={errors.preferredDate}
+              required
+            />
           </div>
-          <FormField as="textarea" label="تفاصيل الطلب" id="request-details" error={errors.details} hint="اذكر المطلوب، المستوى، والنتيجة المتوقعة. الحد الأدنى 20 حرفًا." required name="details" rows="6" value={form.details} onChange={updateField('details')} />
+          <FormField
+            as="textarea"
+            label="تفاصيل الطلب"
+            id="request-details"
+            name="details"
+            rows="6"
+            hint="اذكر المطلوب، المستوى، والنتيجة المتوقعة. الحد الأدنى 20 حرفًا."
+            value={form.details}
+            onChange={updateField}
+            error={errors.details}
+            required
+          />
           <div className={`field request-consent ${errors.consent ? 'field--error' : ''}`}>
             <label htmlFor="request-consent">
-              <input id="request-consent" name="consent" type="checkbox" checked={form.consent} onChange={updateField('consent')} aria-invalid={Boolean(errors.consent)} />
+              <input
+                id="request-consent"
+                name="consent"
+                type="checkbox"
+                checked={form.consent}
+                onChange={updateField}
+                aria-invalid={Boolean(errors.consent)}
+                aria-describedby={errors.consent ? 'request-consent-error' : undefined}
+              />
               أوافق على مشاركة هذه البيانات مع مقدم الخدمة لمعالجة الطلب.
             </label>
             {errors.consent && <p className="field-error" id="request-consent-error" role="alert">{errors.consent}</p>}

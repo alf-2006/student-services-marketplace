@@ -5,7 +5,7 @@ import Button from '../src/components/ui/Button';
 import FormField from '../src/components/ui/FormField';
 import SearchBar from '../src/components/ui/SearchBar';
 
-vi.mock('../src/features/auth/hooks/useAuth', () => ({
+vi.mock('../src/hooks/useAuth', () => ({
   useAuth: () => ({ user: null, loading: false, authError: null, isConfigured: false }),
 }));
 

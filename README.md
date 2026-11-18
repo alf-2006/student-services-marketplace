@@ -47,7 +47,9 @@ pnpm preview
 
 ## تنظيم المشروع وتوزيع الفريق
 
-`src/pages` للصفحات، و`src/components` للتخطيط والمكونات المشتركة، و`src/features` لخدمات الحساب والملف والكتالوج والطلبات. `src/lib/firebase` يهيئ SDK، و`src/utils/validators.js` يجمع التحقق، و`src/styles` يفصل التنسيق العام عن الوحدات. `tests` للاختبارات، و`firestore.rules` للحماية السحابية.
+`src/pages` للصفحات، و`src/components` للتخطيط والمكونات المشتركة، و`src/services` لدوال الحساب والملف والبحث والطلبات. `src/firebase.js` يجهز الاتصال، و`src/context/AuthContext.jsx` يشترك في حالة الحساب، و`src/hooks/useAuth.js` يتيح استخدامها في الصفحات. `src/utils/validators.js` يجمع التحقق، و`src/styles` للتنسيق، و`tests` للاختبارات، و`firestore.rules` لحماية البيانات.
+
+للقراءة لأول مرة: ابدأ بـ`main.jsx` ثم `App.jsx` ثم `router.jsx`، وبعدها اقرأ `HomePage.jsx` و`ServicesPage.jsx` قبل صفحات الحساب والطلبات. [دليل فهم الكود المبسط](docs/BEGINNER_AR.md) يشرح useState وuseEffect وأحداث الفورم وترتيب البحث. الدوال واضحة والملفات أقرب لبعض؛ لم تُضف أخطاء متعمدة ولم تُضعف الحماية لتقليل التعقيد.
 
 الأدلة: [أحمد عيد — الحساب والملف](docs/modules/auth_AR.md)، [ياسمين رجب — التخطيط والواجهة](docs/modules/layout_AR.md)، [ياسمين حسن — الكتالوج والبحث](docs/modules/services_AR.md)، [مريم مصطفى — الطلبات والتحقق](docs/modules/requests_AR.md)، [مصطفى أحمد — المراجعة والتكامل](docs/REVIEW_AR.md). نسبة الـcommits للحسابات توثق توزيع المشروع، ولا تُثبت أن الطلاب نفذوا الاختبارات بأنفسهم. كل طالب مطالب بفهم الجزء المرتبط به وشرحه وتعديله وتشخيص أعطاله.
 

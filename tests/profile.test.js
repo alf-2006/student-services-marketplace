@@ -5,8 +5,8 @@ vi.mock('firebase/firestore', () => ({
   getDoc: mocks.getDoc, setDoc: mocks.setDoc, updateDoc: mocks.updateDoc,
   serverTimestamp: () => mocks.timestamp,
 }));
-vi.mock('../src/lib/firebase/firebase.js', () => ({ firebaseDb: {}, isFirebaseConfigured: true, firebaseConfigurationError: '' }));
-import { saveUserProfile, updateOwnProfile } from '../src/features/profile/profileService.js';
+vi.mock('../src/firebase.js', () => ({ firebaseDb: {}, isFirebaseConfigured: true, firebaseConfigurationError: '' }));
+import { saveUserProfile, updateOwnProfile } from '../src/services/profileService.js';
 const user = { uid: 'owner-1', email: 'actual@example.com' };
 
 describe('خدمة الملف الشخصي', () => {

@@ -1,16 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
-import AppLayout from '../components/layout/AppLayout';
-import EmptyState from '../components/ui/EmptyState';
-import HomePage from '../pages/HomePage';
-import ServicesPage from '../pages/ServicesPage';
-import CategoriesPage from '../pages/CategoriesPage';
-import SearchResultsPage from '../pages/SearchResultsPage';
-import ServiceDetailsPage from '../pages/ServiceDetailsPage';
-import ServiceRequestPage from '../pages/ServiceRequestPage';
-import LoginPage from '../pages/LoginPage';
-import RegisterPage from '../pages/RegisterPage';
-import MyRequestsPage from '../pages/MyRequestsPage';
-import StudentProfilePage from '../pages/StudentProfilePage';
+import AppLayout from './components/layout/AppLayout';
+import EmptyState from './components/ui/EmptyState';
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import CategoriesPage from './pages/CategoriesPage';
+import SearchResultsPage from './pages/SearchResultsPage';
+import ServiceDetailsPage from './pages/ServiceDetailsPage';
+import ServiceRequestPage from './pages/ServiceRequestPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import MyRequestsPage from './pages/MyRequestsPage';
+import StudentProfilePage from './pages/StudentProfilePage';
 
 export default function AppRouter() {
   return (

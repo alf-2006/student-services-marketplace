@@ -8,7 +8,7 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
-import { firebaseDb, isFirebaseConfigured } from '../../lib/firebase/firebase.js';
+import { firebaseDb, isFirebaseConfigured } from '../firebase.js';
 
 export const REQUESTS_COLLECTION = 'requests';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../features/auth/hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 import { ROUTES } from '../../constants/routes';
 
 const primaryLinks = [
@@ -9,6 +9,11 @@ const primaryLinks = [
   { to: ROUTES.categories, label: 'التصنيفات' },
 ];
 
+function navLinkClass({ isActive }) {
+  if (isActive) return 'nav-link is-active';
+  return 'nav-link';
+}
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, loading } = useAuth();
@@ -16,7 +21,7 @@ export default function Navbar() {
   const profileLabel = user ? 'ملفي' : 'طالب مقدم خدمة (عينة)';
 
   useEffect(() => {
-    if (!menuOpen) return undefined;
+    if (!menuOpen) return;
     function closeOnEscape(event) {
       if (event.key === 'Escape') setMenuOpen(false);
     }
@@ -28,26 +33,63 @@ export default function Navbar() {
     setMenuOpen(false);
   }
 
+  function toggleMenu() {
+    setMenuOpen(!menuOpen);
+  }
+
   return (
     <header className="site-header">
       <div className="container site-header-inner">
         <NavLink className="brand" to={ROUTES.home} onClick={closeMenu} aria-label="سوق خدمات الطلبة، الرئيسية">
           <span className="brand-mark" aria-hidden="true">س</span>
-          <span className="brand-copy"><strong>سوق الطلبة</strong><small>خدمات من زملاء الجامعة</small></span>
+          <span className="brand-copy">
+            <strong>سوق الطلبة</strong>
+            <small>خدمات من زملاء الجامعة</small>
+          </span>
         </NavLink>
-        <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen((open) => !open)}>
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="site-navigation"
+          onClick={toggleMenu}
+        >
           {menuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
         </button>
         <nav id="site-navigation" className={`site-navigation${menuOpen ? ' is-open' : ''}`} aria-label="التنقل الرئيسي">
           <div className="nav-links">
             {primaryLinks.map((link) => (
-              <NavLink key={link.to} to={link.to} end={link.end} onClick={closeMenu} className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'}>{link.label}</NavLink>
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.end}
+                onClick={closeMenu}
+                className={navLinkClass}
+              >
+                {link.label}
+              </NavLink>
             ))}
-            <NavLink className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'} to={ROUTES.myRequests} onClick={closeMenu}>طلباتي</NavLink>
-            {!loading ? <NavLink className={({ isActive }) => isActive ? 'nav-link is-active' : 'nav-link'} to={profileTo} onClick={closeMenu}>{profileLabel}</NavLink> : null}
+            <NavLink className={navLinkClass} to={ROUTES.myRequests} onClick={closeMenu}>
+              طلباتي
+            </NavLink>
+            {!loading && (
+              <NavLink className={navLinkClass} to={profileTo} onClick={closeMenu}>
+                {profileLabel}
+              </NavLink>
+            )}
           </div>
           <div className="nav-actions">
-            {user ? <span className="nav-user-label">مرحبًا، {user.displayName || 'طالب مسجل'}</span> : <><NavLink className="nav-link nav-login" to={ROUTES.login} onClick={closeMenu}>تسجيل الدخول</NavLink><NavLink className="btn btn-primary nav-register" to={ROUTES.register} onClick={closeMenu}>إنشاء حساب</NavLink></>}
+            {user && <span className="nav-user-label">مرحبًا، {user.displayName || 'طالب مسجل'}</span>}
+            {!user && (
+              <>
+                <NavLink className="nav-link nav-login" to={ROUTES.login} onClick={closeMenu}>
+                  تسجيل الدخول
+                </NavLink>
+                <NavLink className="btn btn-primary nav-register" to={ROUTES.register} onClick={closeMenu}>
+                  إنشاء حساب
+                </NavLink>
+              </>
+            )}
           </div>
         </nav>
       </div>

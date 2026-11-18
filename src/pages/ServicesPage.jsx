@@ -4,8 +4,8 @@ import ServiceCard from '../components/ui/ServiceCard';
 import { ROUTES } from '../constants/routes';
 import { serviceCategories } from '../constants/serviceCategories';
 import { formatPrice } from '../utils/formatters';
-import ServiceFilters from '../features/services/ServiceFilters';
-import { filterServices } from '../features/services/services/servicesService';
+import ServiceFilters from '../components/ui/ServiceFilters';
+import { filterServices } from '../services/servicesService';
 import '../styles/services.css';
 
 function preservedSearch(searchParams) {

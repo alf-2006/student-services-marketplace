@@ -3,7 +3,7 @@ import {
   firebaseConfigurationError,
   firebaseDb,
   isFirebaseConfigured,
-} from '../../lib/firebase/firebase.js';
+} from '../firebase.js';
 
 export function profileUnavailableError() {
   const error = new Error(firebaseConfigurationError || 'خدمة الملفات التعريفية غير متاحة حالياً.');

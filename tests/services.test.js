@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { services, getServiceById } from '../src/data/services';
-import { filterServices, normalizeArabic } from '../src/features/services/services/servicesService';
+import { filterServices, normalizeArabic } from '../src/services/servicesService';
 
 describe('منطق سوق الخدمات', () => {
   it('يضم بيانات كافية وثلاثة تصنيفات أساسية', () => {

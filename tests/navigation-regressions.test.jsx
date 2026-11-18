@@ -2,12 +2,12 @@ import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes, useNavigate, useSearchParams } from 'react-router-dom';
 import SearchBar from '../src/components/ui/SearchBar';
-import ServiceFilters from '../src/features/services/ServiceFilters';
+import ServiceFilters from '../src/components/ui/ServiceFilters';
 import AppLayout from '../src/components/layout/AppLayout';
 import HomePage from '../src/pages/HomePage';
 import { serviceCategories } from '../src/constants/serviceCategories';
 
-vi.mock('../src/features/auth/hooks/useAuth', () => ({ useAuth: () => ({ user: null, loading: false, isConfigured: false }) }));
+vi.mock('../src/hooks/useAuth', () => ({ useAuth: () => ({ user: null, loading: false, isConfigured: false }) }));
 function SearchHarness() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
